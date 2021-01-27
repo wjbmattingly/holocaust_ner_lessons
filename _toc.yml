@@ -26,3 +26,7 @@
     title: Cultivating Good Datasets for Entities          
   - file: 09_02_cultivating_corpus.ipynb
     title: Cultivating a Corpus
+  - file: 10_the_challenges_of_holocaust_ner
+    title: The Challenges of Holocaust NER
+  - file: 11_introduction_to_custom_pipes
+    title: Introduction to Custom Pipes
