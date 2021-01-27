@@ -24,3 +24,5 @@
     title: Loading Custom Word Vectors into a spaCy Model
   - file: 09_01_cultivating_concentration_camp_dataset
     title: Cultivating Good Datasets for Entities          
+  - file: 09_02_cultivating_corpus.ipynb
+    title: Cultivating a Corpus
