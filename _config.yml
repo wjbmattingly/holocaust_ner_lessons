@@ -1,0 +1,5 @@
+# Book settings
+title: Holocaust NER Lessons
+author: William Mattingly
+execute:
+  execute_notebooks: 'off'
