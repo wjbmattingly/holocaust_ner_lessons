@@ -7,3 +7,5 @@ In all, there will be somewhere between 20 and 30 notebooks when complete.
 This series does presume a basic knowledge of Python, but presumes no knowledge of NLP or NER.
 
 If you don't have any background in programming or Python, check out my video series on Python for Digital Humanities. ==> https://www.youtube.com/playlist?list=PL2VXyKi-KpYtcluInhPJItpNBKIF3LO2k
+
+test change
