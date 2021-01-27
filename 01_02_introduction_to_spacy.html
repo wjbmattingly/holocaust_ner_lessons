@@ -1,0 +1,739 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Named Entity Recognition for Holocaust Documents &#8212; Holocaust NER Lessons</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Custom Named Entity Recognition for Holocaust Documents" href="02_rules_based_ner.html" />
+    <link rel="prev" title="Custom Named Entity Recognition for Holocaust Documents" href="01_01_introduction_to_ner.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Holocaust NER Lessons</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Overview
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_01_introduction_to_ner.html">
+   Introduction to Named Entity Recognition
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction to spaCy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_rules_based_ner.html">
+   Rules-Based NER with spaCy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_machine_learning_ner.html">
+   Machine Learning NER with spaCy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_01_spaCy_Entity_Ruler.html">
+   Using SpaCy's EntityRuler
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_02_create_ner_training_set.html">
+   Using EntityRuler to Create Training Set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_03_train_spacy_ner_model.html">
+   How to Train spaCy NER Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_examining_a_spacy_model.html">
+   Examining a spaCy Model in the Folder
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_introduction_to_word_vectors.html">
+   Introduction to Word Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_generating_custom_word_vectors.html">
+   Generating Custom Word Vectors with Gensim
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_loading_custom_word_vectors.html">
+   Loading Custom Word Vectors into a spaCy Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_01_cultivating_concentration_camp_dataset.html">
+   Cultivating Good Datasets for Entities
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/01_02_introduction_to_spacy.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/01_02_introduction_to_spacy.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#center-part-01-02-center-br-center-introduction-to-spacy-center">
+   <center>
+    Part 01.02:
+   </center>
+   <br/>
+   <center>
+    Introduction to spaCy
+   </center>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
+     Key Concepts in this Notebook
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-frameworks">
+     What are Frameworks?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-spacy">
+     What is spaCy?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentence-tokenization">
+     Sentence Tokenization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#named-entity-recognition">
+     Named Entity Recognition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#part-of-speech">
+     Part-of-Speech
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-nouns-and-noun-chunks">
+     Extracting Nouns and Noun Chunks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extracting-verbs-and-verb-phrases">
+     Extracting Verbs and Verb Phrases
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lemmatization">
+     Lemmatization
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="center-custom-named-entity-recognition-for-holocaust-documents-center">
+<h1><center> Custom Named Entity Recognition for Holocaust Documents</center><a class="headerlink" href="#center-custom-named-entity-recognition-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="center-part-01-02-center-br-center-introduction-to-spacy-center">
+<h2><center>Part 01.02:</center><br><center>Introduction to spaCy</center><a class="headerlink" href="#center-part-01-02-center-br-center-introduction-to-spacy-center" title="Permalink to this headline">¶</a></h2>
+<center>Dr. W.J.B. Mattingly</center>
+<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
+<center>January 2021</center><div class="section" id="key-concepts-in-this-notebook">
+<h3>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>frameworks<br></p></li>
+<li><p>libraries<br></p></li>
+<li><p>rules-based NLP<br></p></li>
+<li><p>machine learning-based NLP<br></p></li>
+<li><p>tokenization<br></p></li>
+<li><p>chunks<br></p></li>
+<li><p>noun extraction<br></p></li>
+<li><p>part-of-speech identification<br></p></li>
+<li><p>entity identification<br></p></li>
+</ol>
+</div>
+<div class="section" id="what-are-frameworks">
+<h3>What are Frameworks?<a class="headerlink" href="#what-are-frameworks" title="Permalink to this headline">¶</a></h3>
+<p>In order to engage in NLP, a researcher must first decide upon the framework they wish to use. <strong>Framework</strong> is a word that describes the software used by the researcher to engage in a specific task. A good way to think about a framework in Pythonic terms is as a <strong>library</strong>, or packaged set of usable classes and functions to perform complex tasks easily. Deciding which framework to use depends on a few variables.</p>
+<p>First, not all frameworks support all languages and not all frameworks support the same languages equally.</p>
+<p>Second, certain frameworks perform certain tasks better than others. While all frameworks will tokenize equally well (usually), the way in which some tasks, such as finding the root of words via lemmatization (spaCy) vs. stemming (Stanza) will vary. Decision on a framework for this purpose typically lies in the realm of computational linguistics or distance reading for the purpose of finding how a word (or words) appear in texts in all forms (conjugated and declined).</p>
+<p>A common third thing to consider is the way in which the framework performs NLP. There are essentially two methods for performing NLP: rules-based and machine learning-based. <strong>Rules-based</strong> NLP is the process by which the frameworks has a predetermined set of rules for how to handle specific tasks. In order to find entities in a text, for example, a rules-based method will contain a dictionary of all types of entities or it may contain a RegEx formula for identifying patterns that match an entity.</p>
+<p>Most frameworks today are moving away from a rules-based approach to NLP in favor of a machine learning-based approach. <strong>Machine learning-based</strong> NLP is the process by which developers use statistics to teach a computer system (known as a model) to perform a task based on past experiences (known as training). We will be speaking much more about machine learning-based NLP later in a later notebook as spaCy, the chief subject of this notebook, is a machine learning-based Python library.</p>
+</div>
+<div class="section" id="what-is-spacy">
+<h3>What is spaCy?<a class="headerlink" href="#what-is-spacy" title="Permalink to this headline">¶</a></h3>
+<p>The spaCy (spelled correctly) library is a robust machine learning NLP library developed by Explosion AI, a Berlin based team of computer scientists and computational linguists. It supports a wide variety of European languages out-of-the-box with statistical models capable of parsing texts, identifying parts-of-speech, and extract entities. SpaCy is also capable of easily improving or training from scratch custom models on domain-specific texts.</p>
+<p>In this notebook, we will go through the steps for installing spaCy, downloading a pretrained language model, and performing the essential tasks of NLP.</p>
+<p>In order to download and install spaCy and the model, one must do so outside of this notebook. Please watch the video below and follow the necessary steps:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/yqruv_QQctI&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yqruv_QQctI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div></div>
+</div>
+</div>
+<div class="section" id="sentence-tokenization">
+<h3>Sentence Tokenization<a class="headerlink" href="#sentence-tokenization" title="Permalink to this headline">¶</a></h3>
+<p>A common essential task of NLP is known as tokenization. We looked at tokenization briefly in the last notebook in which we wanted to break a text into individual components. This is one form of tokenization known as word tokenization. There are, however, many other forms, such as sentence tokenization. <strong>Sentence tokenization</strong> is precisely the same as word tokenization, except instead of breaking a text up into individual word and puncation components, we break a text up into individual sentences.</p>
+<p>If you are familiar with Python, you may be familiar with the built-in split() function which allows for a programmer to split a text by whitespace (default) or by passing an argument of a string to define where to split a text, i.e. split(“.”). A common practice (without NLP frameworks) is to split a text into sentences by simply using the split function, but this is ill-advised. Let us consider the example below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Martin J. Thompson is known for his writing skills. He is also good at programming.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Now, let&#39;s try and use the split function to split the text object based on punctuation.</span>
+<span class="n">new</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">new</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Martin J&#39;, &#39; Thompson is known for his writing skills&#39;, &#39; He is also good at programming&#39;, &#39;&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>While we successfully were able to split the two sentences, we had the unfortunate result of splitting at Martin J. The reason for this may be obvious. In English, it is common convention to indicate abbreviation with the same punctuation mark used to indicate the end of a sentence. The reason for this extends to the early middle ages when Irish monks began to introduce punctuation and spacing to better read Latin (a story for another day).</p>
+<p>The very thing that makes texts easier to read, however, greatly hinders our ability to easily split sentences. For this reason, another method is needed. This is where sentence tokenization comes into play. In order to see how sentence tokenization differs, let’s begin with our first spaCy usage.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#First, we import spaCy</span>
+<span class="kn">import</span> <span class="nn">spacy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Next, we need to load an NLP model object.</span>
+<span class="sd">To do this, we use the spacy.load() function.</span>
+<span class="sd">This will take one argument, the model one wishes to load.</span>
+<span class="sd">We will use the small English model.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">With the nlp object created, we can use it to to parse a text.</span>
+<span class="sd">To do this, we create a doc object.</span>
+<span class="sd">This object will contain a lot of data on the text.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#try printing the object:</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Martin J. Thompson is known for his writing skills. He is also good at programming.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">While this looks identical to the &quot;text&quot; string above, it is quite different.</span>
+<span class="sd">To demonstrate this, let us use the sentence tokenizer.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="k">for</span> <span class="n">sent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">sents</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">sent</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Martin J. Thompson is known for his writing skills.
+He is also good at programming.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice now that we have used the spaCy sentence tokenizer to generate a desired output: a text correctly broken into sentences. This simple demonstration reveals why using an NLP framework for perfoming even a basic task is not only easier, but essential. For a larger explanation of this process, please watch the video below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/ytAyCO-n8tY&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ytAyCO-n8tY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div></div>
+</div>
+</div>
+<div class="section" id="named-entity-recognition">
+<h3>Named Entity Recognition<a class="headerlink" href="#named-entity-recognition" title="Permalink to this headline">¶</a></h3>
+<p>Another essential task of NLP, and the chief subject of this series, is named entity recognition (NER). I spoke about NER in the last notebook. Here, I’d like to demonstrate how to perform basic NER via spaCy. Again, we will iterate over the doc object as we did above, but instead of iterating over doc.sents, we will iterate over doc.ents. For our purposes right now, I simply want to print off each entity’s text (the string itself) and its corresponding label (note the _ after label). I will be explaining this process in much greater detail in the next two notebooks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Martin J. Thompson PERSON
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we can see the small spaCy statistical machine learning model has correctly identified that Martin J. Thompson is, in fact, an entity. What kind of entity? A person. We will explore how it made this determination in notebook 03 in which we explore machine learning NLP more closely. For a look at this process in video form, please see the video below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/lxHNsXudkrY&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lxHNsXudkrY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div></div>
+</div>
+</div>
+<div class="section" id="part-of-speech">
+<h3>Part-of-Speech<a class="headerlink" href="#part-of-speech" title="Permalink to this headline">¶</a></h3>
+<p>In the field of computational linguistics, understanding parts-of-speech is essential. SpaCy offers an easy way to parse a text and identify its parts of speech. Below, we will iterate across each token (word or punctuation) in the text and identify its part of speech.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">token</span><span class="o">.</span><span class="n">pos_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Martin PROPN
+J. PROPN
+Thompson PROPN
+is AUX
+known VERB
+for ADP
+his DET
+writing NOUN
+skills NOUN
+. PUNCT
+He PRON
+is AUX
+also ADV
+good ADJ
+at ADP
+programming NOUN
+. PUNCT
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we can see two vital pieces of information: the string and the corresponding part-of-speech (pos). For a complete list of the pos labels, see the spaCy documentation (https://spacy.io/api/annotation#pos-tagging). Most of these, however, should be apparent, i.e. PROPN is proper noun, AUX is an auxillary verb, ADJ, is adjective, etc. For more on this process, please see the video below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/nv0pksknFxY&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nv0pksknFxY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div></div>
+</div>
+</div>
+<div class="section" id="extracting-nouns-and-noun-chunks">
+<h3>Extracting Nouns and Noun Chunks<a class="headerlink" href="#extracting-nouns-and-noun-chunks" title="Permalink to this headline">¶</a></h3>
+<p>Often times when working with a text, we need to extract nouns and noun chunks. There are a few different ways that we can do this via spaCy. To extract nouns, we can use the doc.noun_chunks attribute.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">noun_chunks</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Martin J. Thompson
+his writing skills
+He
+programming
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that we get a list of all nouns and noun chunks, i.e. “He” and “programming” being nouns and “Martin J. Thompson” and “his writing skills” being noun chunks. For more on this, please see the video below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/aNKt1gKK8Lo&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aNKt1gKK8Lo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div></div>
+</div>
+</div>
+<div class="section" id="extracting-verbs-and-verb-phrases">
+<h3>Extracting Verbs and Verb Phrases<a class="headerlink" href="#extracting-verbs-and-verb-phrases" title="Permalink to this headline">¶</a></h3>
+<p>We can do precisely the same thing with verbs and verb phrases by developing predefined patterns using RegEx. This is a bit more complicated and requires an understanding of linguistic patterns and the textacy library. We will try to find all instances of a specific pattern, an auxillary verb followed by a normal verb.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#We import textacy</span>
+<span class="kn">import</span> <span class="nn">textacy</span>
+
+
+<span class="c1">#We create our patterns as a list of dictionaries</span>
+<span class="n">patterns</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;POS&quot;</span><span class="p">:</span> <span class="s2">&quot;AUX&quot;</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;POS&quot;</span><span class="p">:</span> <span class="s2">&quot;VERB&quot;</span><span class="p">}]</span>
+
+
+<span class="c1">#We create our verb_phrases which will leverage textacy to find the specific patterns in our doc object</span>
+<span class="n">verb_phrases</span> <span class="o">=</span> <span class="n">textacy</span><span class="o">.</span><span class="n">extract</span><span class="o">.</span><span class="n">matches</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">patterns</span><span class="o">=</span><span class="n">patterns</span><span class="p">)</span>
+
+
+<span class="c1">#We iterate across the verb_phrases</span>
+<span class="k">for</span> <span class="n">verb_phrase</span> <span class="ow">in</span> <span class="n">verb_phrases</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">verb_phrase</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>is known
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we correctly find the one instance of an auxillary verb followed by a regular verb: “is known”. For more on this, please see the video below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/VgGHwIWu-kU&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VgGHwIWu-kU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div></div>
+</div>
+</div>
+<div class="section" id="lemmatization">
+<h3>Lemmatization<a class="headerlink" href="#lemmatization" title="Permalink to this headline">¶</a></h3>
+<p>The final item I’d like to explore in this notebook is lemmatization. <strong>Lemmatization</strong> is an essential component in most NLP frameworks, though some libraries perform this concept differently. While libraries, such as Stanza will find word stems, spaCy will find word lemmas. They are technically a little different, but both seek to reduce all words to their roots. To find lemmas via spaCy, we use the same process as we did for finding a word’s part of speech, via iterating over the tokens in the doc object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">token</span><span class="o">.</span><span class="n">lemma_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Martin Martin
+J. J.
+Thompson Thompson
+is be
+known know
+for for
+his -PRON-
+writing writing
+skills skill
+. .
+He -PRON-
+is be
+also also
+good good
+at at
+programming programming
+. .
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that we see most words remain the same, but notice particularly “is” being identified as “be” and “known” becomes “know”. These are the respective lemmas for these verbs. Also notice the same effect on nouns, such as “skills”, a plural, being reduced to “skill”, the singular form. For more on this, see the video below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/YztOLsJkC3A&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YztOLsJkC3A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="01_01_introduction_to_ner.html" title="previous page"><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
+    <a class='right-next' id="next-link" href="02_rules_based_ner.html" title="next page"><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By William Mattingly<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

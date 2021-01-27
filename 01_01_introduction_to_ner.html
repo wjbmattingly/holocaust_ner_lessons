@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Named Entity Recognition for Holocaust Documents &#8212; Holocaust NER Lessons</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Custom Named Entity Recognition for Holocaust Documents" href="01_02_introduction_to_spacy.html" />
+    <link rel="prev" title="Overview" href="intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Holocaust NER Lessons</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Overview
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction to Named Entity Recognition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_02_introduction_to_spacy.html">
+   Introduction to spaCy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_rules_based_ner.html">
+   Rules-Based NER with spaCy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_machine_learning_ner.html">
+   Machine Learning NER with spaCy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_01_spaCy_Entity_Ruler.html">
+   Using SpaCy's EntityRuler
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_02_create_ner_training_set.html">
+   Using EntityRuler to Create Training Set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_03_train_spacy_ner_model.html">
+   How to Train spaCy NER Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_examining_a_spacy_model.html">
+   Examining a spaCy Model in the Folder
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_introduction_to_word_vectors.html">
+   Introduction to Word Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_generating_custom_word_vectors.html">
+   Generating Custom Word Vectors with Gensim
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_loading_custom_word_vectors.html">
+   Loading Custom Word Vectors into a spaCy Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_01_cultivating_concentration_camp_dataset.html">
+   Cultivating Good Datasets for Entities
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/01_01_introduction_to_ner.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/01_01_introduction_to_ner.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#center-part-01-01-center-br-center-introduction-to-named-entity-recognition-center">
+   <center>
+    Part 01.01:
+   </center>
+   <br/>
+   <center>
+    Introduction to Named Entity Recognition
+   </center>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction-to-this-series-of-notebooks">
+     Introduction to this Series of Notebooks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
+     Key Concepts in this Notebook
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-natural-language-processing">
+     What is Natural Language Processing?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-named-entity-recognition">
+     What is Named Entity Recognition?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#video-explanation-on-ner">
+     Video Explanation on NER
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="center-custom-named-entity-recognition-for-holocaust-documents-center">
+<h1><center> Custom Named Entity Recognition for Holocaust Documents</center><a class="headerlink" href="#center-custom-named-entity-recognition-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="center-part-01-01-center-br-center-introduction-to-named-entity-recognition-center">
+<h2><center>Part 01.01:</center><br><center>Introduction to Named Entity Recognition</center><a class="headerlink" href="#center-part-01-01-center-br-center-introduction-to-named-entity-recognition-center" title="Permalink to this headline">¶</a></h2>
+<center>Dr. W.J.B. Mattingly</center>
+<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
+<center>January 2021</center><div class="section" id="introduction-to-this-series-of-notebooks">
+<h3>Introduction to this Series of Notebooks<a class="headerlink" href="#introduction-to-this-series-of-notebooks" title="Permalink to this headline">¶</a></h3>
+<p>These notebooks are designed for those interested in training custom named entity recognition models via the spaCy library. They are intended those who have limited coding experience and no background in natural language processing (NLP). A basic understanding of Python is necessary to partake fully in this series, however, those with no coding experience will still gain a foundational understanding of natural language processing, named entity recognition, the common problems in these fields, and solutions to those problems. For those interested in gaining a quick introduction to Python, please see my series designed for digital humanists at PythonHumanities.com.</p>
+<p>The purposes of these notebooks is fivefold.</p>
+<ol class="simple">
+<li><p>Introduce the reader to the core concepts of natural language processing and named entity recognition<br></p></li>
+<li><p>Provide an introduction to the spaCy library for those with limited Python knowledge<br></p></li>
+<li><p>Detail the problems and solutions to working with domain-specific entities<br></p></li>
+<li><p>Detail the unique problems that Holocaust documents present to practitioners of NLP<br></p></li>
+<li><p>Provide code that will be easily replicable for readers who wish to apply these methods to their own domains.<br></p></li>
+</ol>
+<p>While these notebooks are dedicated to NER in the domain of the Holocaust, the problems we will encounter in this series are not unique. These notebooks, therefore, shall serve as a guide for those experiencing similar problems in other domains.</p>
+<p>Key concepts and terminology will be emboldened. If there are mistakes in grammar, spelling, or code, please reach out to me via twitter (&#64;wjb_mattingly) and I will update the notebooks accordingly.</p>
+</div>
+<div class="section" id="key-concepts-in-this-notebook">
+<h3>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>natural language processing (NLP)<br></p></li>
+<li><p>named entity recognition (NER)<br></p></li>
+<li><p>tokens and tokenization<br></p></li>
+<li><p>multi-word tokens<br></p></li>
+<li><p>spans<br></p></li>
+<li><p>pipelines<br></p></li>
+</ol>
+</div>
+<div class="section" id="what-is-natural-language-processing">
+<h3>What is Natural Language Processing?<a class="headerlink" href="#what-is-natural-language-processing" title="Permalink to this headline">¶</a></h3>
+<p>Named entity recognition (addressed below) is a branch of <strong>natural language processing</strong>, better known as <strong>NLP</strong>. NLP is the process by which a researcher uses a computer system to parse human language and extract important metadata from texts. The purpose of NLP is to perform, among other things, <strong>distance reading</strong>.</p>
+<p>Distance reading has a long history extending to the late-twentieth century. It is commonly used when the quantity of texts in a given corpus prevent a researcher (or a team of researchers) from reading the corpus <em>closely</em> in its entirety. In order to make sense of that large corpus, the researcher will often pass certain tasks to a computer with the understanding that there is a margin of error. This margin of error is accepted in exchange for the ability to gain a larger, <em>distant</em> understanding of that corpus. Distance reading is used to perform several significant tasks, such as:</p>
+<ol class="simple">
+<li><p><strong>sentiment analysis</strong>=&gt; understanding the sentiment of a text<br></p></li>
+<li><p><strong>text classification</strong>=&gt; classify texts into predetermined categories<br></p></li>
+<li><p><strong>named entity recognition</strong>=&gt; extract entities from a text<br></p></li>
+</ol>
+<p>The metadata from these tasks can then be used to get a sense of the texts without reading them closely, hence the term <em>distance reading</em>.</p>
+<p>NLP works in tandem with two other similar branches of computational linguistics, <strong>natural language understanding</strong>, or <strong>NLU</strong>, and <strong>automatic speech recognition</strong>, or <strong>ASR</strong>. To get a better understanding of how these fields relate to one another, please see the image below.</p>
+<img src="https://cdn-images-1.medium.com/max/1000/1*Uf_qQ0zF8G8y9zUhndA08w.png"/><p>This image is commonly shared across various NLP tutorials and for good reason. It accuarately portrays the diverse field of NLP and its close partner fields of NLU and ASR. The goal of NLP is to feed a text to a computer system and have it return some sort of output. This is often achieved through a series of <strong>pipelines</strong> that perform some opperations on the data at hand.</p>
+<p>Earlier pipelines, may includer a tokenizer, whose sole job is to break a text into individual tokens. <strong>Tokens</strong> are items in a text that have some linguistic meaning. They can be words, such as “Martha”, but they can also be punctuation marks, such as “,” in the relative clause “, a senior,”. Likewise, “‘nt” in the contraction “can’t” would also be recognized as a token since “‘nt” in English corresponds to the word “not”.</p>
+<p>A common pipeline after a tokenizer is a parser whose job is to identify the parts-of-speech, or POS, in the text. This is essential for the computer to understand how individual tokens are functioning in a sentence. The way in which we perform POS on different langauges is not the same. In inflected langauges, such as German, or highly inflected languages, such as Latin or Ancient Greek, the ending of the word contains a lot of information about it’s role in the sentence, i.e. a nominative singular or dative plural. In low inflected languages, such as English, position in the sentence holds primacy. English is a Noun-Verb-Object langauge (NVO). Let us consider an example sentence:</p>
+<p><em>The boy took the ball to the store</em>.</p>
+<p>The nominative (subject), “boy”, comes first in the sentence, followed by the verb, “took”, then followed by the accusative (object), “ball”, and finally the dative (indirect object), “store”. The words “the” and “to” also contain vital information. “The” occurs twice and tells the reader that it’s not just any ball, it’s <em>the</em> ball; likewise, it’s not just a store, but <em>the</em> store. The period too tells us something important. This is a statement, not a question. For native speakers of a given language these parts-of-speech may go entirely unnoticed. We understand them intuitively. Some of us may have memories of memorizing parsing trees in 5th grade grammar, but for the most part we developed mentally and linguistically with our mother tongue in a unique way. We can use that language without thought of grammar. For those who have devoted time to learning a second language later in life, grammar is a necessity (and sometimes a bane) to learn. We do not learn languages later in life the same way we learn our mother tongue. For a computer, the same holds true. We need to allow the computer to understand parts of speech.</p>
+<p>Named entity recognition will often times come later in a pipeline because it needs to receive a tokenized text and, in some languages, it needs to understand a words POS to perform well. As a text moves through the pipeline, it receives <strong>spans</strong> that contain valuable information, such as part of speech. Once the text reaches the NER pipeline, it is time for the machine to make some structured decisions about individual tokens.</p>
+</div>
+<div class="section" id="what-is-named-entity-recognition">
+<h3>What is Named Entity Recognition?<a class="headerlink" href="#what-is-named-entity-recognition" title="Permalink to this headline">¶</a></h3>
+<p><strong>Entities</strong> are words in a text that correspond to a specific type of data. They can be <em>numerical</em>, such as cardinal numbers; <em>temporal</em>, such as dates; <em>nominal</em>, such as names of people and places; and <em>political</em>, such as geopolitical entities (GPE). In short, an entity can be anything the designer whishes to designated as an item in a text that has a corresponding label.</p>
+<p>Named entity recognition, or <strong>NER</strong>, is the process by which a system takes an input of unstructured data (a text) and outputs structured data, specifically the identification of entities. Let us consider this short example.</p>
+<p><em>Martha, a senior, moved to Spain where she will be playing basketball until 05 June 2022 or until she can’t play any longer.</em></p>
+<p>In this example, we have several potential entities. First, there is “Martha”. Different NER models will have different coresponding labels for such an entity, but PERSON or PER is considered standard practice. Note here that the label is capitalized. This is also standard practice. We also have a GPE, or Geopolitical Entity, notably “Spain”. Finally, we have a DATE entity, “05 June 2022”. These are standard labels that one can expect to extract from a text. If the domain at hand, however, has additional labels, those can be extracted as well. Perhaps the client or user wants to not only extract people, GPEs, and dates, but also sports. In such a scenario “basketball” could be extracted and given the label SPORT.</p>
+<p>Not all entities are singular. As is common with texts, sometimes entities are <strong>Multi-word Tokens</strong>, or <strong>MWT</strong>. Let us consider the same sentence as above, but with one modification:</p>
+<p><em>Martha <strong>Thompson</strong>, a senior, moved to Spain where she will be playing basketball until 05 June 2022 or until she can’t play any longer.</em></p>
+<p>Here, Martha now has a surname, “Thompson”. We can either extract Martha and Thompson as individual entities or, as is more common practice, extract both as a single entity, since “Martha Thompson” is a single individual. An NER system, therefore, should recognize “Martha Thompson” as a single, MWT.</p>
+<p>As we progress through these notebooks and videos, we will learn new NER concepts. For now, I recommend watching the video below. Each notebook, including this one, will have a corresponding video lesson.</p>
+</div>
+<div class="section" id="video-explanation-on-ner">
+<h3>Video Explanation on NER<a class="headerlink" href="#video-explanation-on-ner" title="Permalink to this headline">¶</a></h3>
+<p>In this video, I explain these concepts and outline the future parts of this blog.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/E9h8qVm2uNY&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/E9h8qVm2uNY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Overview</a>
+    <a class='right-next' id="next-link" href="01_02_introduction_to_spacy.html" title="next page"><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By William Mattingly<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

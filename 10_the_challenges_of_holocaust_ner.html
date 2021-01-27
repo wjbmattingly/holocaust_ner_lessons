@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Named Entity Recognition for Holocaust Documents &#8212; Holocaust NER Lessons</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Holocaust NER Lessons</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Overview
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_01_introduction_to_ner.html">
+   Introduction to Named Entity Recognition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_02_introduction_to_spacy.html">
+   Introduction to spaCy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_rules_based_ner.html">
+   Rules-Based NER with spaCy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_machine_learning_ner.html">
+   Machine Learning NER with spaCy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_01_spaCy_Entity_Ruler.html">
+   Using SpaCy's EntityRuler
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_02_create_ner_training_set.html">
+   Using EntityRuler to Create Training Set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_03_train_spacy_ner_model.html">
+   How to Train spaCy NER Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_examining_a_spacy_model.html">
+   Examining a spaCy Model in the Folder
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_introduction_to_word_vectors.html">
+   Introduction to Word Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_generating_custom_word_vectors.html">
+   Generating Custom Word Vectors with Gensim
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_loading_custom_word_vectors.html">
+   Loading Custom Word Vectors into a spaCy Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_01_cultivating_concentration_camp_dataset.html">
+   Cultivating Good Datasets for Entities
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/10_the_challenges_of_holocaust_ner.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/10_the_challenges_of_holocaust_ner.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#center-part-10-center-br-center-the-challenges-of-holocaust-ner-center">
+   <center>
+    Part 10:
+   </center>
+   <br/>
+   <center>
+    The Challenges of Holocaust NER
+   </center>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
+     Key Concepts in this Notebook
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-overview-of-the-problems">
+     An Overview of the Problems
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ethical">
+     Ethical
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linguistic">
+     Linguistic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#toponyms">
+     Toponyms
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
+     Exercise
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#video">
+     Video
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="center-custom-named-entity-recognition-for-holocaust-documents-center">
+<h1><center> Custom Named Entity Recognition for Holocaust Documents</center><a class="headerlink" href="#center-custom-named-entity-recognition-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="center-part-10-center-br-center-the-challenges-of-holocaust-ner-center">
+<h2><center>Part 10:</center><br><center>The Challenges of Holocaust NER</center><a class="headerlink" href="#center-part-10-center-br-center-the-challenges-of-holocaust-ner-center" title="Permalink to this headline">¶</a></h2>
+<center>Dr. W.J.B. Mattingly</center>
+<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
+<center>January 2021</center><div class="section" id="key-concepts-in-this-notebook">
+<h3>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>machine learning ethics<br></p></li>
+<li><p>the problem of multilingual/regionally diverse corpora<br></p></li>
+<li><p>toponym<br></p></li>
+<li><p>toponym resolution<br></p></li>
+</ol>
+</div>
+<div class="section" id="an-overview-of-the-problems">
+<h3>An Overview of the Problems<a class="headerlink" href="#an-overview-of-the-problems" title="Permalink to this headline">¶</a></h3>
+<p>Developing an NER model for Holocaust documents has several issues that must be addressed. They fall into three categories: ethical, linguistic, toponym resolution. This notebook will be divided into these three categories.</p>
+</div>
+<div class="section" id="ethical">
+<h3>Ethical<a class="headerlink" href="#ethical" title="Permalink to this headline">¶</a></h3>
+<p>When working with documents as sensitive and delicate as those belonging to the Holocaust, any data scientist or NLP/ML practitioner must consider the serious ethical implications of using machine learning. First, there is the issue of privacy. Named Entity Recognition, by definition, finds and extracted <em>named</em> entities. Do the individuals mentioned in the documents wish to be more discoverable? Do they wish to have their names removed from context and stored as metadata? These are some of the ethical quesitons that one should consider. That is not to say that the process cannot go forward, but if it does, it falls on the part of the creator of the NER to explain the ethical considersations that went into the process and the steps taken to remedy them.</p>
+<p>When it comes to names, these can be victims of violence, perpetrators of violence, interviewers of victims, historians, etc. One must ask if it is acceptable to try and use a machine to introduce decisions about the function of the individual in context. Is it ethical or even responsible to try and get a machine to identify victims or perpetrators of violence? Possibly not. It really depends on the desired output and the degree to which the creator of the NER system wishes to justify their actions.</p>
+<p>Further, machine learning is imprecise. This means that mistakes will happen. If your NER is trying to identify PEOPLE, GPE, and custom entities, such as CONC_CAMP (concentration camp) and GHETTO, is it ethically acceptable to have errors that result in a potential victim being labeled as a CONC_CAMP? From a machine learning point-of-view, this kind of error is possible and understandable. But imagine if a victim or family member of a victim is trying to use new technology to learn about their past and they see their own name or that of a friend or family member who was a victim of the Holocaust labeled as a CONC_CAMP. Why did this happen? For various reasons. If we think about this from the perspective of the victim, however, this could have a traumatic effect. For these reasons we have an ethical responsibility to introduce barriers to preven things like this from occuring and/or introducing warnings and explanations for <em>why</em> these types of errors may occur.</p>
+</div>
+<div class="section" id="linguistic">
+<h3>Linguistic<a class="headerlink" href="#linguistic" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the ethical concerns, there are also linguistic issues that make Holocaust data particularly challenging. First, the Holocaust covered a wide section of Europe and, as a result, those who were involved in or affected by the events surrounding the Holocaust were, necessarily of various linguistic backgrounds. In addition to this, many individuals had two mother tongues or spoke multiple languages. This has resulted in documents in the tens of languages. Furthermore, some documents are multilingual. For example, in the oral testimonies at the USHMM, inviduals may give testimony in English, but then use a Yiddish or Polish word. This sudden change in language may or may not be indicated in the notation.</p>
+<p>Handling documents of multiple languages is a challenging task in NLP. Fortunately, the new advents of BERT and transformer-based machine learning models may provide the key. For now the steps I have taken in this notebook work strictly for single-language documents. If a word appears here or there in a text that is foreign, the steps I have provided will suffice. If, however, the documents are half German and half English, certain preprocessing steps need to be taken to handle each language separately.</p>
+<p>In addition to multiple languages being present in a document, sometimes a document may contain peculiar dialects of a language. This will often return poorer results if an NER model has not been introduced to or experienced such dialectical variances. For example, in oral testimonies, a victim of the Holocaust may refer to their birthplace by a local name that is only used by a select few. It may be a village in Poland that most models will have never encountered. It is important to understand <em>why</em> these issues present problems for models and how to overcome them. As we saw in the previous notebook, the easiest way to overcome these issues, is to incorperate them into the training data.</p>
+</div>
+<div class="section" id="toponyms">
+<h3>Toponyms<a class="headerlink" href="#toponyms" title="Permalink to this headline">¶</a></h3>
+<p>There is one final problem associated with Holocaust documents and that is the problem of toponyms. <strong>Toponyms</strong> are proper nouns that are identical but have radically different meanings depending on the context in which it is used. For example, were I to say “Paris has an excellent climate this time of year.” Where would I be speaking about? If you read this, then you would probably assume that I was speaking of Paris, France. What if I told you that I made that statement while sitting at a caffee in Lexington, KY. The place in which I made that statement may mean that I was speaking, actually, about Paris, KY, a small town outside of Lexington. But now what if I told you that I made that statement in this context. “I just got back from a trip in Texas. Paris has an excellent climate this time of year.” Now, it is a bit more clear that I may be speaking about Paris, TX.</p>
+<p>Without context, that single sentence could have many different meanings. Paris, in this example, is a toponym. In Holocaust documents, we often experience toponyms for places that have specific entity labels depending on context. Let’s consider this example. Imagine that I have a model that can identify two types of entities: LOCATION and GHETTO.</p>
+<p>“Warsaw is a large city in Poland. During WWII, the Warsaw Ghetto was created.”</p>
+<p>As a human, how would you annotate these two sentences? If you said, consider Warsaw in the first sentence a LOCATION and Warsaw in the second sentence a GHETTO, you’d be right. The trick in NER and NLP is to create systems that can perform this task. Holocaust documents are filled with examples just like this. The way in which we overcome these problems is by including correctly <strong>toponym resolved</strong> training sets, or training sets that have been manually annotated to ensure that toponyms are labeled correctly, to the model so it can learn to identify toponyms correctly.</p>
+</div>
+<div class="section" id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+<p>Think about toponyms that exist in your data. How might you resolve them?</p>
+</div>
+<div class="section" id="video">
+<h3>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h3>
+<p>Unfortunatley, there is no video for this notebook.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By William Mattingly<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

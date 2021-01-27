@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Named Entity Recognition for Holocaust Documents &#8212; Holocaust NER Lessons</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Custom Named Entity Recognition for Holocaust Documents" href="03_machine_learning_ner.html" />
+    <link rel="prev" title="Custom Named Entity Recognition for Holocaust Documents" href="01_02_introduction_to_spacy.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Holocaust NER Lessons</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Overview
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_01_introduction_to_ner.html">
+   Introduction to Named Entity Recognition
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_02_introduction_to_spacy.html">
+   Introduction to spaCy
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Rules-Based NER with spaCy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_machine_learning_ner.html">
+   Machine Learning NER with spaCy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_01_spaCy_Entity_Ruler.html">
+   Using SpaCy's EntityRuler
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_02_create_ner_training_set.html">
+   Using EntityRuler to Create Training Set
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_03_train_spacy_ner_model.html">
+   How to Train spaCy NER Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_examining_a_spacy_model.html">
+   Examining a spaCy Model in the Folder
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_introduction_to_word_vectors.html">
+   Introduction to Word Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_generating_custom_word_vectors.html">
+   Generating Custom Word Vectors with Gensim
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_loading_custom_word_vectors.html">
+   Loading Custom Word Vectors into a spaCy Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_01_cultivating_concentration_camp_dataset.html">
+   Cultivating Good Datasets for Entities
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/02_rules_based_ner.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/02_rules_based_ner.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#center-part-02-01-center-br-center-rules-based-ner-with-spacy-center">
+   <center>
+    Part 02.01:
+   </center>
+   <br/>
+   <center>
+    Rules-Based NER with spaCy
+   </center>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
+     Key Concepts in this Notebook
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-rules-based-ner">
+     What is Rules-Based NER?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-bother-with-rules-based-ner">
+     Why Bother with Rules-Based NER?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#when-to-use-rules-based-ner">
+     When to Use Rules-Based NER
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-limitations-of-rules-based-ner">
+     The Limitations of Rules-Based NER
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spacy-s-entityruler">
+     SpaCy’s EntityRuler
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise">
+     Exercise
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#video-for-rules-based-ner">
+     Video for Rules-Based NER
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="center-custom-named-entity-recognition-for-holocaust-documents-center">
+<h1><center> Custom Named Entity Recognition for Holocaust Documents</center><a class="headerlink" href="#center-custom-named-entity-recognition-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="center-part-02-01-center-br-center-rules-based-ner-with-spacy-center">
+<h2><center>Part 02.01:</center><br><center>Rules-Based NER with spaCy</center><a class="headerlink" href="#center-part-02-01-center-br-center-rules-based-ner-with-spacy-center" title="Permalink to this headline">¶</a></h2>
+<center>Dr. W.J.B. Mattingly</center>
+<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
+<center>January 2021</center><div class="section" id="key-concepts-in-this-notebook">
+<h3>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Rules-based NER<br></p></li>
+<li><p>gazatteer<br></p></li>
+<li><p>When to use rules-based NER<br></p></li>
+<li><p>The benefits and limitations of rules-based NER<br></p></li>
+<li><p>SpaCy’s EntityRuler<br></p></li>
+</ol>
+</div>
+<div class="section" id="what-is-rules-based-ner">
+<h3>What is Rules-Based NER?<a class="headerlink" href="#what-is-rules-based-ner" title="Permalink to this headline">¶</a></h3>
+<p>As I mentioned in the previous notebook, there are two types of NLP and NER: rules-based and machine learning-based. This notebook will be dedicated to rules-based, while the next one will be dedicated to machine learning-based.</p>
+<p>Rules-based NER is the method by which an NLP practitioner either creates or utalizes an NLP system that has a predefined set of instructions, or rules, to perform certain NLP tasks. For NER, this often times means using what is known as a gazatteer. A <strong>gazatteer</strong> is a list, or dictionary, of entities that align with a specific label. In the case of people, this would be a list of first and last names. If you are developing an NER for a specific region, as we will in a later notebook, this may be a list of all locations in that region.</p>
+<p>Well-cultivated gazatteers served as the primary method for performing NER in the early twenty-first century. It is still a staple in some NLP frameworks, such as v.0.01 of the Classical Language Toolkit (CLTK), which is currently being replaced with machine learning models.</p>
+<p>Sometimes, however, a researcher may not have a list of all potential names in a domain. In these instances, should one wish to pursue rules-based NLP, one would utalize pattern rules-based NER. In this scenario, the researcher creates a specific set of patterns to find and then presume that anything that aligns with that pattern is a specific entity. This can be used for places, i.e. Berlin, Germany; London, England, Dallas, Texas. In this scenario, one could use string pattern libraries, such as RegEx (Regular Expressions) to find instances of a capitalized word, followed by a comma, followed by another capitalized word and presume that such an occurence is a PLACE. More commonly, however, such a method is used to find dates in a text. While there are many ways to represent a date, there are a limited number of patterns. For example, were I to want to represent January 1st, I could write the following:</p>
+<ol class="simple">
+<li><p>Jan 1<br></p></li>
+<li><p>1 Jan<br></p></li>
+<li><p>Jan first<br></p></li>
+<li><p>Jan 1st<br></p></li>
+<li><p>January 1st<br></p></li>
+<li><p>January 1<br></p></li>
+<li><p>1 January<br></p></li>
+</ol>
+<p>There are likely other potential variations, but my point is that there is a limited number of ways of representing a date. For this reason, finding and extraction temporal entities in texts is usually fairly easy via rules-based pattern methods. The problem becomes even easier if dates are only represented a few ways. One could develop a pattern to find any instance of a number, followed by a capital word or visa versa as a date.</p>
+</div>
+<div class="section" id="why-bother-with-rules-based-ner">
+<h3>Why Bother with Rules-Based NER?<a class="headerlink" href="#why-bother-with-rules-based-ner" title="Permalink to this headline">¶</a></h3>
+<p>I mentioned in the previous notebook that NLP is moving away from rules-based methods and toward machine learning-based ones. You may be thinking, why you should learn rules-based NLP and NER.</p>
+<p>The answer is because there remain certain situations in which a rules-based solution is better than a machine learning-based one. Further, there are times when a combination of the two is more suited. In order to understand <em>when</em> to use which solution is important and, therefore, a firm foundation in rules-based NER is essential in order to do machine learning NER.</p>
+</div>
+<div class="section" id="when-to-use-rules-based-ner">
+<h3>When to Use Rules-Based NER<a class="headerlink" href="#when-to-use-rules-based-ner" title="Permalink to this headline">¶</a></h3>
+<p>This raises an important question. <em>When should you use a rules-based NER approach?</em> The answer is simple. When there are a finite number of ways a specific entity will be represented so that you can catch roughly 95-97% of them with such rules. I say 95-97% not because this is the industry standard, rather because this is my goal for my NER models. If I can use a rules-based approach and achieve equal accuracy as an ML model, I will likely do that because the time it takes to implement a rules-based approach to NER is often less than the time it takes to train, validate, and test a machine learning model.</p>
+<p>As we will see in the video below, this is a particularly useful approach when you know every potential name in a corpus, such as we will see with the toy example of Harry Potter.</p>
+</div>
+<div class="section" id="the-limitations-of-rules-based-ner">
+<h3>The Limitations of Rules-Based NER<a class="headerlink" href="#the-limitations-of-rules-based-ner" title="Permalink to this headline">¶</a></h3>
+<p>A key thing to remember, however, is that rules-based methods are precisely that: rules-based. If an entity falls outside of the rule you have developed, then it will not be flagged as an entity. This is particularly prevenlant in texts that have been OCRed, typed without spellcheck, unedited, or any form of uncleaned text.</p>
+<p>While cleaning texts is an essential component to proper data preparation for NLP, it is sometimes impossible to clean entirely a text and, sometimes, an individual using your particular NER framework may not know to clean texts before hand. This is the chief limitation of rules-based methods and it is one of the chief reasons researchers use machine learning methods today. Machine learning models learn and can, therefore, generalize on unseen data, despite variance (to an extent) from things it has seen in the past. We will explore this in greater detail in the next notebook.</p>
+</div>
+<div class="section" id="spacy-s-entityruler">
+<h3>SpaCy’s EntityRuler<a class="headerlink" href="#spacy-s-entityruler" title="Permalink to this headline">¶</a></h3>
+<p>While spaCy is chiefly a machine learning NLP library, it possess the ability to use rules-based NER methods. This is a major strength of the library, for as we shall see to develop a strong NER system for many difficult domains, a combination of rules-based and machine learning-based approaches are sometimes essential.</p>
+<p>There are a few ways to engage in rules-based NER with spaCy, but one of the more fundamental is its EntityRuler.</p>
+<p>Let’s return to our sample sentence from the first notebook with Martha the basketball player. In this scenario, we want to not only extract the normal entities from the text (PERSON, DATE, etc.), but also a new entity SPORT. In a later notebook, we will discuss adding custom entities in much more detail. For now, we will use this simple toy example to demonstrate how rules-based NER works.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Martha, a senior, moved to Spain where she will be playing basketball until 05 June 2022 or until she can&#39;t play any longer.&quot;</span>
+
+<span class="c1">#Import spacy</span>
+<span class="kn">import</span> <span class="nn">spacy</span>
+
+
+<span class="c1">#Create a blank spaCy model that will parse English (&quot;en&quot;)</span>
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">blank</span><span class="p">(</span><span class="s2">&quot;en&quot;</span><span class="p">)</span>
+
+
+<span class="c1">#Create a ruler that we will add to the model</span>
+<span class="n">ruler</span> <span class="o">=</span> <span class="n">nlp</span><span class="o">.</span><span class="n">create_pipe</span><span class="p">(</span><span class="s2">&quot;entity_ruler&quot;</span><span class="p">)</span>
+
+
+<span class="c1">#Develop a pattern to find</span>
+<span class="n">ruler</span><span class="o">.</span><span class="n">add_patterns</span><span class="p">([{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;SPORT&quot;</span><span class="p">,</span> <span class="s2">&quot;pattern&quot;</span><span class="p">:</span> <span class="s2">&quot;basketball&quot;</span><span class="p">}])</span>
+
+<span class="c1">#Add the ruler with the new pattern its it knowledge-base to the model</span>
+<span class="n">nlp</span><span class="o">.</span><span class="n">add_pipe</span><span class="p">(</span><span class="n">ruler</span><span class="p">)</span>
+
+<span class="c1">#Create the doc object by processing the text through our newly created nlp model</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="c1">#Iterate over all entities (there will be only one)</span>
+<span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>basketball SPORT
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+<p>We see that the output is as desired. We have extracted basektball, the string, and its correct label, SPORT. Don’t be alarmed if you don’t entirely understand how the code above works. By the end of this series, you will. For now, simply understand <em>how</em> rules-based NER works. Expirement with the code above and try to create a model below that can identify soccer as a SPORT in the following text:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Scott enjoys to play soccer.&quot;</span>
+
+
+<span class="c1">#Here, replicate the code above to find soccer as a SPORT</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="video-for-rules-based-ner">
+<h3>Video for Rules-Based NER<a class="headerlink" href="#video-for-rules-based-ner" title="Permalink to this headline">¶</a></h3>
+<p>Once you’ve finished with the above exercise, check out the video on Rules-Based NER below. It reinforces some of these concepts and explores them in a larger context, specifically via the first book of Harry Potter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/O_2uq0sdCQo&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/O_2uq0sdCQo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="01_02_introduction_to_spacy.html" title="previous page"><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
+    <a class='right-next' id="next-link" href="03_machine_learning_ner.html" title="next page"><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By William Mattingly<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
