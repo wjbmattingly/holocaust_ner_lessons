@@ -19,18 +19,21 @@ This NER Textbook was created during my postdoctoral fellowship at the Smithsoni
   
 ```{image} ./images/data_science_lab_logo.png
 :alt: dsl
+:target: https://datascience.si.edu/
 :class: bg-primary
 :width: 200px
 :align: center
 ```
 ```{image} ./images/si_logo.jpg
 :alt: si
+:target: https://si.edu/
 :class: bg-primary
 :width: 200px
 :align: center
 ```
   ```{image} ./images/ushmm_logo.jpg
 :alt: ushmm
+:target: https://www.ushmm.org/
 :class: bg-primary
 :width: 200px
 :align: center
