@@ -12,13 +12,7 @@ This NER Textbook was created during my postdoctoral fellowship at the Smithsoni
 ### <p align="center">Acknowledgments</p>
 This textbook would not have been possible without the help of Mike Trizna, Rebecca Dikow, and those in the Data Science Lab who listened to, aided, and advised me while creating these notebooks. I would also like to thank the content experts at the USHMM, specifically Michael Haley Goldman, Michael Levy, and Robert Ehrenreich.
 <p float="left">
-<img src="images/data_science_lab_logo.png"
-     alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px;" />
-<img src="images/si_logo.jpg"
-     alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px;" />
-<img src="images/ushmm_logo.jpg"
-alt="Markdown Monster icon"
-style="float: left; margin-right: 10px;" />
+<img src="images/data_science_lab_logo.png" width="100">
+<img src="images/si_logo.jpg" width="100">
+<img src="images/ushmm_logo.jpg" width="100">
 </p>
