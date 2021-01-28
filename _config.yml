@@ -1,5 +1,5 @@
 # Book settings
-title: Holocaust NER Lessons
+title: Introduction to Named Entity Recognition
 author: William Mattingly
 execute:
   execute_notebooks: 'off'
