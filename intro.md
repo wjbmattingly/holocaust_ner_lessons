@@ -15,3 +15,9 @@ This textbook would not have been possible without the help of Mike Trizna, Rebe
 <img src="images/data_science_lab_logo.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
+<img src="images/si_logo.jpg"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+<img src="images/ushmm_logo.jpg"
+alt="Markdown Monster icon"
+style="float: left; margin-right: 10px;" />
