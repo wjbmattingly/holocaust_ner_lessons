@@ -3,3 +3,5 @@ title: Introduction to Named Entity Recognition
 author: William Mattingly
 execute:
   execute_notebooks: 'off'
+parse:
+  myst_extended_syntax: true
