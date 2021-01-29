@@ -1,45 +1,46 @@
 - file: intro
-parts:
-numbered: true
-- part: Key Concepts and Terms
+- book:
+  parts:
   numbered: true
-  chapters:
-  - file: 01_01_introduction_to_ner
-    title: Introduction to Named Entity Recognition
-  - file: 01_02_introduction_to_spacy
-    title: Introduction to spaCy
-  - file: 02_rules_based_ner
-    title: Rules-Based NER with spaCy
-  - file: 03_machine_learning_ner
-    title: Machine Learning NER with spaCy
-- part: The Basics of NER Training
-  numbered: true
-  chapters:
-  - file: 04_01_spaCy_Entity_Ruler
-    title: Using SpaCy's EntityRuler
-  - file: 04_02_create_ner_training_set
-    title: Using EntityRuler to Create Training Set
-  - file:  04_03_train_spacy_ner_model
-    title: How to Train spaCy NER Model
-- part: Advanced NER Concepts
-  numbered: true
-  chapters:
-  - file: 05_examining_a_spacy_model
-    title: Examining a spaCy Model in the Folder
-  - file: 06_introduction_to_word_vectors
-    title: Introduction to Word Vectors
-  - file: 07_generating_custom_word_vectors
-    title: Generating Custom Word Vectors with Gensim
-  - file: 08_loading_custom_word_vectors
-    title: Loading Custom Word Vectors into a spaCy Model
-- part: Solving a Domain-Specific Problem (Holocaust)
-  numbered: true
-  chapters:
-  - file: 09_01_cultivating_concentration_camp_dataset
-    title: Cultivating Good Datasets for Entities          
-  - file: 09_02_cultivating_corpus.ipynb
-    title: Cultivating a Corpus
-  - file: 10_the_challenges_of_holocaust_ner
-    title: The Challenges of Holocaust NER
-  - file: 11_introduction_to_custom_pipes
-    title: Introduction to Custom Pipes
+  - part: Key Concepts and Terms
+    numbered: true
+    chapters:
+    - file: 01_01_introduction_to_ner
+      title: Introduction to Named Entity Recognition
+    - file: 01_02_introduction_to_spacy
+      title: Introduction to spaCy
+    - file: 02_rules_based_ner
+      title: Rules-Based NER with spaCy
+    - file: 03_machine_learning_ner
+      title: Machine Learning NER with spaCy
+  - part: The Basics of NER Training
+    numbered: true
+    chapters:
+    - file: 04_01_spaCy_Entity_Ruler
+      title: Using SpaCy's EntityRuler
+    - file: 04_02_create_ner_training_set
+      title: Using EntityRuler to Create Training Set
+    - file:  04_03_train_spacy_ner_model
+      title: How to Train spaCy NER Model
+  - part: Advanced NER Concepts
+    numbered: true
+    chapters:
+    - file: 05_examining_a_spacy_model
+      title: Examining a spaCy Model in the Folder
+    - file: 06_introduction_to_word_vectors
+      title: Introduction to Word Vectors
+    - file: 07_generating_custom_word_vectors
+      title: Generating Custom Word Vectors with Gensim
+    - file: 08_loading_custom_word_vectors
+      title: Loading Custom Word Vectors into a spaCy Model
+  - part: Solving a Domain-Specific Problem (Holocaust)
+    numbered: true
+    chapters:
+    - file: 09_01_cultivating_concentration_camp_dataset
+      title: Cultivating Good Datasets for Entities          
+    - file: 09_02_cultivating_corpus.ipynb
+      title: Cultivating a Corpus
+    - file: 10_the_challenges_of_holocaust_ner
+      title: The Challenges of Holocaust NER
+    - file: 11_introduction_to_custom_pipes
+      title: Introduction to Custom Pipes
