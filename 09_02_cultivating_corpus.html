@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Custom Named Entity Recognition for Holocaust Documents &#8212; Introduction to Named Entity Recognition</title>
+    <title>2. Custom Named Entity Recognition for Holocaust Documents &#8212; Introduction to Named Entity Recognition</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Custom Named Entity Recognition for Holocaust Documents" href="10_the_challenges_of_holocaust_ner.html" />
-    <link rel="prev" title="Custom Named Entity Recognition for Holocaust Documents" href="09_01_cultivating_concentration_camp_dataset.html" />
+    <link rel="next" title="3. Custom Named Entity Recognition for Holocaust Documents" href="10_the_challenges_of_holocaust_ner.html" />
+    <link rel="prev" title="1. Custom Named Entity Recognition for Holocaust Documents" href="09_01_cultivating_concentration_camp_dataset.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -94,7 +94,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  PART ONE Key Concepts and Terms
+  Key Concepts and Terms
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -121,77 +121,77 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  PART TWO The Basics of NER Training
+  The Basics of NER Training
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="04_01_spaCy_Entity_Ruler.html">
-   01 Using SpaCy's EntityRuler
+   1. Using SpaCy's EntityRuler
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_02_create_ner_training_set.html">
-   02 Using EntityRuler to Create Training Set
+   2. Using EntityRuler to Create Training Set
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_03_train_spacy_ner_model.html">
-   03 How to Train spaCy NER Model
+   3. How to Train spaCy NER Model
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  PART THREE Advanced NER Concepts
+  Advanced NER Concepts
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="05_examining_a_spacy_model.html">
-   01 Examining a spaCy Model in the Folder
+   1. Examining a spaCy Model in the Folder
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06_introduction_to_word_vectors.html">
-   02 Introduction to Word Vectors
+   2. Introduction to Word Vectors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="07_generating_custom_word_vectors.html">
-   03 Generating Custom Word Vectors with Gensim
+   3. Generating Custom Word Vectors with Gensim
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="08_loading_custom_word_vectors.html">
-   04 Loading Custom Word Vectors into a spaCy Model
+   4. Loading Custom Word Vectors into a spaCy Model
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  PART FOUR Solving a Domain-Specific Problem (Holocaust)
+  Solving a Domain-Specific Problem (Holocaust)
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="09_01_cultivating_concentration_camp_dataset.html">
-   01 Cultivating Good Datasets for Entities
+   1. Cultivating Good Datasets for Entities
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   02 Cultivating a Corpus
+   2. Cultivating a Corpus
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="10_the_challenges_of_holocaust_ner.html">
-   03 The Challenges of Holocaust NER
+   3. The Challenges of Holocaust NER
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="11_introduction_to_custom_pipes.html">
-   04 Introduction to Custom Pipes
+   4. Introduction to Custom Pipes
   </a>
  </li>
 </ul>
@@ -283,6 +283,7 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#center-part-09-02-center-br-center-cultivating-a-corpus-center">
+   2.1.
    <center>
     Part 09.02:
    </center>
@@ -294,42 +295,42 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
-     Key Concepts in this Notebook
+     2.1.1. Key Concepts in this Notebook
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#introduction">
-     Introduction
+     2.1.2. Introduction
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#variety">
-     Variety
+     2.1.3. Variety
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#preparing-the-corpus">
-     Preparing the Corpus
+     2.1.4. Preparing the Corpus
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#to-lemmatize-or-not-to-lemmatize">
-     To Lemmatize or Not to Lemmatize
+     2.1.5. To Lemmatize or Not to Lemmatize
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#segment-the-corpus">
-     Segment the Corpus
+     2.1.6. Segment the Corpus
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise">
-     Exercise
+     2.1.7. Exercise
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#video">
-     Video
+     2.1.8. Video
     </a>
    </li>
   </ul>
@@ -346,27 +347,27 @@
               <div>
                 
   <div class="section" id="center-custom-named-entity-recognition-for-holocaust-documents-center">
-<h1><center> Custom Named Entity Recognition for Holocaust Documents</center><a class="headerlink" href="#center-custom-named-entity-recognition-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span><center> Custom Named Entity Recognition for Holocaust Documents</center><a class="headerlink" href="#center-custom-named-entity-recognition-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="center-part-09-02-center-br-center-cultivating-a-corpus-center">
-<h2><center>Part 09.02:</center><br><center>Cultivating a Corpus</center><a class="headerlink" href="#center-part-09-02-center-br-center-cultivating-a-corpus-center" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span><center>Part 09.02:</center><br><center>Cultivating a Corpus</center><a class="headerlink" href="#center-part-09-02-center-br-center-cultivating-a-corpus-center" title="Permalink to this headline">¶</a></h2>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2021</center><div class="section" id="key-concepts-in-this-notebook">
-<h3>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>What to look for in a corpus<br></p></li>
 </ol>
 </div>
 <div class="section" id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
 <p>This notebook has a single purpose, to provide the steps I took to cultivate a corpus to run an EntityRuler across to cultivate a large training set. I will use this as a case study for what to look for in a corpus.</p>
 </div>
 <div class="section" id="variety">
-<h3>Variety<a class="headerlink" href="#variety" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.3. </span>Variety<a class="headerlink" href="#variety" title="Permalink to this headline">¶</a></h3>
 <p>The goal of machine learning models is to be able to generalize well on unseen data. The best way to get the model to generalize well on all unseen data (or at least a lot of it), is to give the model texts is a wide variety. Variety is key when training because variety allows for a model to learn different things from different types of texts, which are written in different styles, dialects, contexts, etc. So the first thing you need to consider when putting together a corpus to generate training data from is, variety. So, with that in mind, give the model as much textual data as you can.</p>
 </div>
 <div class="section" id="preparing-the-corpus">
-<h3>Preparing the Corpus<a class="headerlink" href="#preparing-the-corpus" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.4. </span>Preparing the Corpus<a class="headerlink" href="#preparing-the-corpus" title="Permalink to this headline">¶</a></h3>
 <p>Once you have compiled documents from various sources that represent a wide range of styles, dialects, and contexts, it’s time to begin preparing that corpus. At this stage, the NLP practitioner must consider <em>how</em> they want to prepare the corpus. How one prepares the corpus radically alters <em>what</em> a model learns.</p>
 <p>Let’s consider these few sentences:</p>
 <div class="cell docutils container">
@@ -439,7 +440,7 @@ my name is william mattingly
 <p>By cleaning the text, we’ve succcessfully eliminated. However, in doing this, our model will never encounter data where proper nouns are uppercased. It will never encounter periods, either. In cleaning your data, therefore, be mindful of this.</p>
 </div>
 <div class="section" id="to-lemmatize-or-not-to-lemmatize">
-<h3>To Lemmatize or Not to Lemmatize<a class="headerlink" href="#to-lemmatize-or-not-to-lemmatize" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.5. </span>To Lemmatize or Not to Lemmatize<a class="headerlink" href="#to-lemmatize-or-not-to-lemmatize" title="Permalink to this headline">¶</a></h3>
 <p>Next, we must consider the question of lemmatization. We met lemmatization in notebook 01.02, but perhaps it is worth describing it again here. Lemmatization is the process by which we reduce all words to their lemma, or root. There are different libraries that perform lemmatization differently. For our purposes, we will use spaCy. Let’s look at a new example in the sentences below.</p>
 <p>In both sentences, we have almost the same meaning except the concept of time and one being entirely uppercase. Lemmatization offers the ability to make these both sentences identical.</p>
 <div class="cell docutils container">
@@ -487,16 +488,16 @@ the ball be his
 <p>By performing lemmatization on the sentences, we were able to entirely eliminate the temporal difference between these two texts. This is occasionally a useful step in cleaning textual data for various NLP tasks, and sometimes it is good to introduce this simplified forms to texts, depending on what you want the model to do. Again, by doing this, it means a model will never encounter “was” or any non-lemmatized forms of words. Again, what you give the model, is what the model will learn.</p>
 </div>
 <div class="section" id="segment-the-corpus">
-<h3>Segment the Corpus<a class="headerlink" href="#segment-the-corpus" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.6. </span>Segment the Corpus<a class="headerlink" href="#segment-the-corpus" title="Permalink to this headline">¶</a></h3>
 <p>A final note before we wrap up this notebook is on segmentation. Text segmentation is the process by which you break up the large corpus (sometimes millions of documents) into managable sizes delinated in a single text file by line breaks (my preference). I find it is always good to think about the size of training data I want to give the model. If I am working with Latin texts, I choose a segment size that is a chapter (usually 4-20 sentences). If I am working with USHMM oral testimonies, I segment the corpus by blocks of question-answer. If I am working with regular textual data, I may segment the text at individual sentences.</p>
 <p>Think about the size of the training data you want to give the model. I find for the process of automating a rules-based EntityRuler for generating training data, smaller sizes eliminates the potential for false negatives.</p>
 </div>
 <div class="section" id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.7. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
 <p>For the exercise in this notebook, find a corpus that meets the requirements I mentioned above and expirement with different methods of cleaning that corpus.</p>
 </div>
 <div class="section" id="video">
-<h3>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.1.8. </span>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h3>
 <p>I do not have a video for this notebook, unfortunately.</p>
 </div>
 </div>
@@ -530,8 +531,8 @@ the ball be his
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="09_01_cultivating_concentration_camp_dataset.html" title="previous page"><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
-    <a class='right-next' id="next-link" href="10_the_challenges_of_holocaust_ner.html" title="next page"><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
+    <a class='left-prev' id="prev-link" href="09_01_cultivating_concentration_camp_dataset.html" title="previous page"><span class="section-number">1. </span><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
+    <a class='right-next' id="next-link" href="10_the_challenges_of_holocaust_ner.html" title="next page"><span class="section-number">3. </span><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

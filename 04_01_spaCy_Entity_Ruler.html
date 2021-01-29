@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Custom Named Entity Recognition for Holocaust Documents &#8212; Introduction to Named Entity Recognition</title>
+    <title>1. Custom Named Entity Recognition for Holocaust Documents &#8212; Introduction to Named Entity Recognition</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,7 +54,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Custom Named Entity Recognition for Holocaust Documents" href="04_02_create_ner_training_set.html" />
+    <link rel="next" title="2. Custom Named Entity Recognition for Holocaust Documents" href="04_02_create_ner_training_set.html" />
     <link rel="prev" title="4. Custom Named Entity Recognition for Holocaust Documents" href="03_machine_learning_ner.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -94,7 +94,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  PART ONE Key Concepts and Terms
+  Key Concepts and Terms
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -121,77 +121,77 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  PART TWO The Basics of NER Training
+  The Basics of NER Training
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   01 Using SpaCy's EntityRuler
+   1. Using SpaCy's EntityRuler
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_02_create_ner_training_set.html">
-   02 Using EntityRuler to Create Training Set
+   2. Using EntityRuler to Create Training Set
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_03_train_spacy_ner_model.html">
-   03 How to Train spaCy NER Model
+   3. How to Train spaCy NER Model
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  PART THREE Advanced NER Concepts
+  Advanced NER Concepts
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="05_examining_a_spacy_model.html">
-   01 Examining a spaCy Model in the Folder
+   1. Examining a spaCy Model in the Folder
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06_introduction_to_word_vectors.html">
-   02 Introduction to Word Vectors
+   2. Introduction to Word Vectors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="07_generating_custom_word_vectors.html">
-   03 Generating Custom Word Vectors with Gensim
+   3. Generating Custom Word Vectors with Gensim
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="08_loading_custom_word_vectors.html">
-   04 Loading Custom Word Vectors into a spaCy Model
+   4. Loading Custom Word Vectors into a spaCy Model
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  PART FOUR Solving a Domain-Specific Problem (Holocaust)
+  Solving a Domain-Specific Problem (Holocaust)
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="09_01_cultivating_concentration_camp_dataset.html">
-   01 Cultivating Good Datasets for Entities
+   1. Cultivating Good Datasets for Entities
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="09_02_cultivating_corpus.html">
-   02 Cultivating a Corpus
+   2. Cultivating a Corpus
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="10_the_challenges_of_holocaust_ner.html">
-   03 The Challenges of Holocaust NER
+   3. The Challenges of Holocaust NER
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="11_introduction_to_custom_pipes.html">
-   04 Introduction to Custom Pipes
+   4. Introduction to Custom Pipes
   </a>
  </li>
 </ul>
@@ -283,6 +283,7 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#center-part-04-01-center-br-center-using-spacy-s-entityruler-center">
+   1.1.
    <center>
     Part 04.01:
    </center>
@@ -294,37 +295,37 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
-     Key Concepts in this Notebook
+     1.1.1. Key Concepts in this Notebook
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#introduction-to-spacy-s-entityruler">
-     Introduction to Spacy’s EntityRuler
+     1.1.2. Introduction to Spacy’s EntityRuler
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#demonstration-of-entityruler-in-action">
-     Demonstration of EntityRuler in Action
+     1.1.3. Demonstration of EntityRuler in Action
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#introducing-complex-rules-and-variance-to-the-entityruler-advanced">
-     Introducing Complex Rules and Variance to the EntityRuler (Advanced)
+     1.1.4. Introducing Complex Rules and Variance to the EntityRuler (Advanced)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#other-rules-based-matching-techniques-in-spacy">
-     Other Rules-Based Matching Techniques in spaCy.
+     1.1.5. Other Rules-Based Matching Techniques in spaCy.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise">
-     Exercise
+     1.1.6. Exercise
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#video">
-     Video
+     1.1.7. Video
     </a>
    </li>
   </ul>
@@ -341,13 +342,13 @@
               <div>
                 
   <div class="section" id="center-custom-named-entity-recognition-for-holocaust-documents-center">
-<h1><center> Custom Named Entity Recognition for Holocaust Documents</center><a class="headerlink" href="#center-custom-named-entity-recognition-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span><center> Custom Named Entity Recognition for Holocaust Documents</center><a class="headerlink" href="#center-custom-named-entity-recognition-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="center-part-04-01-center-br-center-using-spacy-s-entityruler-center">
-<h2><center>Part 04.01:</center><br><center>Using SpaCy’s EntityRuler</center><a class="headerlink" href="#center-part-04-01-center-br-center-using-spacy-s-entityruler-center" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span><center>Part 04.01:</center><br><center>Using SpaCy’s EntityRuler</center><a class="headerlink" href="#center-part-04-01-center-br-center-using-spacy-s-entityruler-center" title="Permalink to this headline">¶</a></h2>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2021</center><div class="section" id="key-concepts-in-this-notebook">
-<h3>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>pipe<br></p></li>
 <li><p>factory<br></p></li>
@@ -357,7 +358,7 @@
 </ol>
 </div>
 <div class="section" id="introduction-to-spacy-s-entityruler">
-<h3>Introduction to Spacy’s EntityRuler<a class="headerlink" href="#introduction-to-spacy-s-entityruler" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.2. </span>Introduction to Spacy’s EntityRuler<a class="headerlink" href="#introduction-to-spacy-s-entityruler" title="Permalink to this headline">¶</a></h3>
 <p>The Python library spaCy offers a few different methods for performing rules-based NER. One such method is via its EntityRuler.</p>
 <p>The <strong>EntityRuler</strong> is a spaCy factory that allows one to create a set of patterns with corresponding labels. A <strong>factory</strong> in spaCy is a set of classes and functions preloaded in spaCy that perform set tasks. In the case of the EntityRuler, the factory at hand allows the user to create an EntityRuler, give it a set of instructions, and then use this instructions to find and label entities.</p>
 <p>Once the user has created the EntityRuler and given it a set of instructions, the user can then add it to the spaCy pipeline as a new pipe. I have spoken in the past notebooks briefly about pipes, but perhaps it is good to address them in more detail here.</p>
@@ -368,7 +369,7 @@
 <p>This notebook with synthesize this documentation for non-specialists and provide some examples of it in action.</p>
 </div>
 <div class="section" id="demonstration-of-entityruler-in-action">
-<h3>Demonstration of EntityRuler in Action<a class="headerlink" href="#demonstration-of-entityruler-in-action" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.3. </span>Demonstration of EntityRuler in Action<a class="headerlink" href="#demonstration-of-entityruler-in-action" title="Permalink to this headline">¶</a></h3>
 <p>In the code below, we will introduce a new pipe into spaCy’s off-the-shelf small English model. The purpose of this EntityRuler will be to identify small villages in Poland correctly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -534,7 +535,7 @@ Treblinka GPE
 </div>
 </div>
 <div class="section" id="introducing-complex-rules-and-variance-to-the-entityruler-advanced">
-<h3>Introducing Complex Rules and Variance to the EntityRuler (Advanced)<a class="headerlink" href="#introducing-complex-rules-and-variance-to-the-entityruler-advanced" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.4. </span>Introducing Complex Rules and Variance to the EntityRuler (Advanced)<a class="headerlink" href="#introducing-complex-rules-and-variance-to-the-entityruler-advanced" title="Permalink to this headline">¶</a></h3>
 <p>In some instances, labels may have a set type of variance that follow a distinct pattern or sets of patterns. One such example (included in the spaCy documentation) is phone numbers. In the United States, phone numbers have a few forms. The standard formal method is (xxx)-xxx-xxxx, but it is not uncommon to see xxx-xxx-xxxx or xxxxxxxxxx. If the owner of the phone number is giving that same number to someone outside the US, then +1(xxx)-xxx-xxxx.</p>
 <p>If you are working within a United States domain, you can pass RegEx formulas to the pattern matcher to grab all of these instances.</p>
 <p>The spaCy EntityRuler also allows the user to introduce a variety of complex rules and variances (via, among other things, RegEx) by passing the rules to the pattern. There are many arguments that one can pass to the patterns. For a complete list, see: https://spacy.io/usage/rule-based-matching . To expiremnet with how these work, I recommend using the spaCy Matcher demo: https://explosion.ai/demos/matcher .</p>
@@ -586,15 +587,15 @@ Treblinka GPE
 </div>
 </div>
 <div class="section" id="other-rules-based-matching-techniques-in-spacy">
-<h3>Other Rules-Based Matching Techniques in spaCy.<a class="headerlink" href="#other-rules-based-matching-techniques-in-spacy" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.5. </span>Other Rules-Based Matching Techniques in spaCy.<a class="headerlink" href="#other-rules-based-matching-techniques-in-spacy" title="Permalink to this headline">¶</a></h3>
 <p>There are two other rules-based methods in spaCy: Matcher and PhraseMatcher. While these function similarly to the EntityRuler, they do not identify those matches as entities, rather they provide their own unique labels and IDs beyond the bounds of entities in the Doc object.</p>
 </div>
 <div class="section" id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.6. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
 <p>For the exercise for this notebook, try and develop a custom EntityRuler to find a custom entity in your own domain-specific texts.</p>
 </div>
 <div class="section" id="video">
-<h3>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.7. </span>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h3>
 <p>Check out the video below in which we explore an entire use-case for spaCy’s EntityRuler to find Harry Potter characters in the first book of Harry Potter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -644,7 +645,7 @@ Treblinka GPE
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="03_machine_learning_ner.html" title="previous page"><span class="section-number">4. </span><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
-    <a class='right-next' id="next-link" href="04_02_create_ner_training_set.html" title="next page"><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
+    <a class='right-next' id="next-link" href="04_02_create_ner_training_set.html" title="next page"><span class="section-number">2. </span><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

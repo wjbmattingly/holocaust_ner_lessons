@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Custom Named Entity Recognition for Holocaust Documents &#8212; Introduction to Named Entity Recognition</title>
+    <title>1. Custom Named Entity Recognition for Holocaust Documents &#8212; Introduction to Named Entity Recognition</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Custom Named Entity Recognition for Holocaust Documents" href="09_02_cultivating_corpus.html" />
-    <link rel="prev" title="Custom Named Entity Recognition for Holocaust Documents" href="08_loading_custom_word_vectors.html" />
+    <link rel="next" title="2. Custom Named Entity Recognition for Holocaust Documents" href="09_02_cultivating_corpus.html" />
+    <link rel="prev" title="4. Custom Named Entity Recognition for Holocaust Documents" href="08_loading_custom_word_vectors.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -94,7 +94,7 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  PART ONE Key Concepts and Terms
+  Key Concepts and Terms
  </span>
 </p>
 <ul class="nav sidenav_l1">
@@ -121,77 +121,77 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  PART TWO The Basics of NER Training
+  The Basics of NER Training
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="04_01_spaCy_Entity_Ruler.html">
-   01 Using SpaCy's EntityRuler
+   1. Using SpaCy's EntityRuler
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_02_create_ner_training_set.html">
-   02 Using EntityRuler to Create Training Set
+   2. Using EntityRuler to Create Training Set
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_03_train_spacy_ner_model.html">
-   03 How to Train spaCy NER Model
+   3. How to Train spaCy NER Model
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  PART THREE Advanced NER Concepts
+  Advanced NER Concepts
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="05_examining_a_spacy_model.html">
-   01 Examining a spaCy Model in the Folder
+   1. Examining a spaCy Model in the Folder
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06_introduction_to_word_vectors.html">
-   02 Introduction to Word Vectors
+   2. Introduction to Word Vectors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="07_generating_custom_word_vectors.html">
-   03 Generating Custom Word Vectors with Gensim
+   3. Generating Custom Word Vectors with Gensim
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="08_loading_custom_word_vectors.html">
-   04 Loading Custom Word Vectors into a spaCy Model
+   4. Loading Custom Word Vectors into a spaCy Model
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  PART FOUR Solving a Domain-Specific Problem (Holocaust)
+  Solving a Domain-Specific Problem (Holocaust)
  </span>
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   01 Cultivating Good Datasets for Entities
+   1. Cultivating Good Datasets for Entities
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="09_02_cultivating_corpus.html">
-   02 Cultivating a Corpus
+   2. Cultivating a Corpus
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="10_the_challenges_of_holocaust_ner.html">
-   03 The Challenges of Holocaust NER
+   3. The Challenges of Holocaust NER
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="11_introduction_to_custom_pipes.html">
-   04 Introduction to Custom Pipes
+   4. Introduction to Custom Pipes
   </a>
  </li>
 </ul>
@@ -283,6 +283,7 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#center-part-09-01-center-br-center-cultivating-good-datasets-for-entities-center">
+   1.1.
    <center>
     Part 09.01:
    </center>
@@ -294,42 +295,42 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
-     Key Concepts in this Notebook
+     1.1.1. Key Concepts in this Notebook
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#introduction-to-datasets">
-     Introduction to Datasets
+     1.1.2. Introduction to Datasets
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#acquiring-the-data">
-     Acquiring the Data
+     1.1.3. Acquiring the Data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#wikipedia">
-     Wikipedia
+     1.1.4. Wikipedia
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#united-states-holocaust-memorial-museum">
-     United States Holocaust Memorial Museum
+     1.1.5. United States Holocaust Memorial Museum
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ehri-and-toponyms-in-the-datasets">
-     EHRI and Toponyms in the Datasets
+     1.1.6. EHRI and Toponyms in the Datasets
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise">
-     Exercise
+     1.1.7. Exercise
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#video">
-     Video
+     1.1.8. Video
     </a>
    </li>
   </ul>
@@ -346,30 +347,30 @@
               <div>
                 
   <div class="section" id="center-custom-named-entity-recognition-for-holocaust-documents-center">
-<h1><center> Custom Named Entity Recognition for Holocaust Documents</center><a class="headerlink" href="#center-custom-named-entity-recognition-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span><center> Custom Named Entity Recognition for Holocaust Documents</center><a class="headerlink" href="#center-custom-named-entity-recognition-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="center-part-09-01-center-br-center-cultivating-good-datasets-for-entities-center">
-<h2><center>Part 09.01:</center><br><center>Cultivating Good Datasets for Entities</center><a class="headerlink" href="#center-part-09-01-center-br-center-cultivating-good-datasets-for-entities-center" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span><center>Part 09.01:</center><br><center>Cultivating Good Datasets for Entities</center><a class="headerlink" href="#center-part-09-01-center-br-center-cultivating-good-datasets-for-entities-center" title="Permalink to this headline">¶</a></h2>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2021</center><div class="section" id="key-concepts-in-this-notebook">
-<h3>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Where to find good datasets<br></p></li>
 <li><p>How to clean datasets<br></p></li>
 </ol>
 </div>
 <div class="section" id="introduction-to-datasets">
-<h3>Introduction to Datasets<a class="headerlink" href="#introduction-to-datasets" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.2. </span>Introduction to Datasets<a class="headerlink" href="#introduction-to-datasets" title="Permalink to this headline">¶</a></h3>
 <p>The previous notebooks have covered the basics of named entity recognition and provided lessons on how to work with spaCy. With all of this in place, it is time to shift this series towards gathering and cleaning the data. This notebook, 09.01, will be on acquiring the requisite data for named entities relevant to the Holocaust. Notebook 09.02 will be on cultivating a corpus for training good word vectors. Notebook 09.03 will be dedicated to cultivating a corpus to automate an the creation of a training set via the spaCy EntityRuler.</p>
 <p>In this notebook we will cover where to find data for good datasets. How to clean that data. And how to run some preliminary tests to make sure you have optimized the data for the purpose of creating a rules-based NER via spaCy’s EntityRuler. This will allow you to have a good rules-based NER that can either be used on its own or leveraged to cultivate a good training set for a machine learning model.</p>
 </div>
 <div class="section" id="acquiring-the-data">
-<h3>Acquiring the Data<a class="headerlink" href="#acquiring-the-data" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.3. </span>Acquiring the Data<a class="headerlink" href="#acquiring-the-data" title="Permalink to this headline">¶</a></h3>
 <p>One of the first questions you will ask yourself in this pursuit, is “where can I acquire lists?” The answer is, unfortunately, “it depends.” Sometimes good datasets exist. There are a few good places to look, such as GitHub, Wikipedia, and academic digital projects. For each project, you must don your detective goggles and explore the web to find these datasets. Most times, it will take a bit of work (and some Python code) to get the data into a structured form. In this notebook, we will try to cultivate a good dataset for concentration camps.</p>
 <p>If we are looking to generate entities for concentration camps, we have a wealth of data, but this data is not necessary cleaned or structured. Let’s examine three different locations where we can collate a list of concentration camps from the web and the strengths and weaknesses of those sources.</p>
 </div>
 <div class="section" id="wikipedia">
-<h3>Wikipedia<a class="headerlink" href="#wikipedia" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.4. </span>Wikipedia<a class="headerlink" href="#wikipedia" title="Permalink to this headline">¶</a></h3>
 <p>Chances are, you will often begin your search by simply typing into Google, “List of [X]”. If you do this with concentration camp, then you will likely first encounter Wikipedia (https://en.wikipedia.org/wiki/List_of_Nazi_concentration_camps).</p>
 <p>This page is particularly useful for a few reasons. First, you have a list of the major camps, such as Auschwitz and Dachau. More importantly, however, you also have access to linked pages of subcamps, i.e. for Auchwitz, one can acess this page: https://en.wikipedia.org/wiki/List_of_subcamps_of_Auschwitz. With a little bit of Python, requests, and BeautifulSoup, we can easily compile a quick list.</p>
 <div class="cell docutils container">
@@ -441,7 +442,7 @@
 <p>This data does, however, come at a cost. It is data gathered from Wikipedia. In order to ensure that this data is proper, a content expert should be consulted. If a content expert is not a hand, I would recommend acquiring data from more reputable sites, such as nationally-funded museums or academic institutions.</p>
 </div>
 <div class="section" id="united-states-holocaust-memorial-museum">
-<h3>United States Holocaust Memorial Museum<a class="headerlink" href="#united-states-holocaust-memorial-museum" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.5. </span>United States Holocaust Memorial Museum<a class="headerlink" href="#united-states-holocaust-memorial-museum" title="Permalink to this headline">¶</a></h3>
 <p>One such institution is the United States Holocaust Memorial Museum (USHMM), located in Washington, D.C. in the United States. When searching the USHMM collections, one way to limit your search is by Key Camps (https://www.ushmm.org/)</p>
 <p>Which looks like this:</p>
 <div class="cell docutils container">
@@ -522,17 +523,17 @@
 <p>Note the standardization of ‘Płaszów’ as ‘Plaszow’ in the list. Both forms are now represented in our dataset, meaning we can develop a rules-based EntityRuler that can find both forms of these words in texts. While we were able to solve the first problem, that of standardized data, we cannot solve the first, however. Should we wish, though, we could add this dataset to our Wikipedia datasets, but as we will see below, a larger dataset presents new challenges.</p>
 </div>
 <div class="section" id="ehri-and-toponyms-in-the-datasets">
-<h3>EHRI and Toponyms in the Datasets<a class="headerlink" href="#ehri-and-toponyms-in-the-datasets" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.6. </span>EHRI and Toponyms in the Datasets<a class="headerlink" href="#ehri-and-toponyms-in-the-datasets" title="Permalink to this headline">¶</a></h3>
 <p>Another excellent resource for datasets pertaining to the Holocaust is EHRI Project (https://portal.ehri-project.eu/). Under their authority sets and vocabularies, users have access to well-cultivated datasets, including “EHRI Camps” (https://portal.ehri-project.eu/vocabularies). This list contains 1,975 different camps. As we did with the Wikipedia data above, we can easily webscrape this data. It is here, however, that I want to raise a word of caution.</p>
 <p>Both the EHRI dataset and the Wikipedia larger dataset (both of which include subcamps) contain toponyms, or words that have identical spelling but have different meaning in different contexts. A good example of this is “Cologne” which is in our Buchenwald subcamp dataset. Cologne, however, is not strictly a “camp”, rather it can also be a GPE or LOCATION. In other words, it can also function as Cologne the city in a text. How then do we account for this when trying to prepare a rules-based NER or automate the cultivation of a good training set for an ML model?</p>
 <p>To generate a rules-based method, we could eliminate all instances of these toponyms being used without the word “camp” nearby. We could also train a toponym model that parses all identified camps and then eliminates the ones that don’t fit the typical pattern, or any number of other things. There are options. I am less interested in developing a rules-based NER approach for the purpose of deployment, however. I am interested in using a rules-based NER approach to cultivate a training set for a machine learning NER model. Because this is my objective, I would drop all instances of toponyms from my dataset, such as Cologne. The best way to do this is with a content expert and manually eliminate all toponyms.</p>
 </div>
 <div class="section" id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.7. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
 <p>Whatever dataset you are trying to cultivate, see if you can find it on the web. As you prepare that dataset, think about the steps discussed in this notebook. Clean the data and consider the various ways in which your dataset could accidently be used to identify false positives. If you can’t think about all the different ways that can happen, that’s okay. In notebook 09.03 we will start to test our datasets against a corpus. I often do not clean datasets perfectly on my first pass. It is only after a few tests that I realize I can clean them further.</p>
 </div>
 <div class="section" id="video">
-<h3>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.1.8. </span>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
@@ -580,8 +581,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="08_loading_custom_word_vectors.html" title="previous page"><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
-    <a class='right-next' id="next-link" href="09_02_cultivating_corpus.html" title="next page"><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
+    <a class='left-prev' id="prev-link" href="08_loading_custom_word_vectors.html" title="previous page"><span class="section-number">4. </span><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
+    <a class='right-next' id="next-link" href="09_02_cultivating_corpus.html" title="next page"><span class="section-number">2. </span><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
