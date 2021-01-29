@@ -1,7 +1,6 @@
 - file: intro
   numbered: true
 - part: Key Concepts and Terms
-  numbered: true
   chapters:
   - file: 01_01_introduction_to_ner
     title: Introduction to Named Entity Recognition
@@ -12,7 +11,6 @@
   - file: 03_machine_learning_ner
     title: Machine Learning NER with spaCy
 - part: The Basics of NER Training
-  numbered: true
   chapters:
   - file: 04_01_spaCy_Entity_Ruler
     title: Using SpaCy's EntityRuler
@@ -21,7 +19,6 @@
   - file:  04_03_train_spacy_ner_model
     title: How to Train spaCy NER Model
 - part: Advanced NER Concepts
-  numbered: true
   chapters:
   - file: 05_examining_a_spacy_model
     title: Examining a spaCy Model in the Folder
@@ -32,7 +29,6 @@
   - file: 08_loading_custom_word_vectors
     title: Loading Custom Word Vectors into a spaCy Model
 - part: Solving a Domain-Specific Problem (Holocaust)
-  numbered: true
   chapters:
   - file: 09_01_cultivating_concentration_camp_dataset
     title: Cultivating Good Datasets for Entities          
