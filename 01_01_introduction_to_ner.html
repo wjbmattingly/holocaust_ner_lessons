@@ -284,12 +284,8 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#center-part-01-01-center-br-center-introduction-to-named-entity-recognition-center">
+  <a class="reference internal nav-link" href="#center-introduction-to-named-entity-recognition-center">
    1.1.
-   <center>
-    Part 01.01:
-   </center>
-   <br/>
    <center>
     Introduction to Named Entity Recognition
    </center>
@@ -335,8 +331,8 @@
                 
   <div class="section" id="center-custom-named-entity-recognition-for-holocaust-documents-center">
 <h1><span class="section-number">1. </span><center> Custom Named Entity Recognition for Holocaust Documents</center><a class="headerlink" href="#center-custom-named-entity-recognition-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="center-part-01-01-center-br-center-introduction-to-named-entity-recognition-center">
-<h2><span class="section-number">1.1. </span><center>Part 01.01:</center><br><center>Introduction to Named Entity Recognition</center><a class="headerlink" href="#center-part-01-01-center-br-center-introduction-to-named-entity-recognition-center" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="center-introduction-to-named-entity-recognition-center">
+<h2><span class="section-number">1.1. </span><center>Introduction to Named Entity Recognition</center><a class="headerlink" href="#center-introduction-to-named-entity-recognition-center" title="Permalink to this headline">¶</a></h2>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2021</center><div class="section" id="introduction-to-this-series-of-notebooks">
@@ -385,7 +381,7 @@
 </div>
 <div class="section" id="what-is-named-entity-recognition">
 <h3><span class="section-number">1.1.4. </span>What is Named Entity Recognition?<a class="headerlink" href="#what-is-named-entity-recognition" title="Permalink to this headline">¶</a></h3>
-<p><strong>Entities</strong> are words in a text that correspond to a specific type of data. They can be <em>numerical</em>, such as cardinal numbers; <em>temporal</em>, such as dates; <em>nominal</em>, such as names of people and places; and <em>political</em>, such as geopolitical entities (GPE). In short, an entity can be anything the designer whishes to designated as an item in a text that has a corresponding label.</p>
+<p><strong>Entities</strong> are words in a text that correspond to a specific type of data. They can be <em>numerical</em>, such as cardinal numbers; <em>temporal</em>, such as dates; <em>nominal</em>, such as names of people and places; and <em>political</em>, such as geopolitical entities (GPE). In short, an entity can be anything the designer whishes to designate as an item in a text that has a corresponding label.</p>
 <p>Named entity recognition, or <strong>NER</strong>, is the process by which a system takes an input of unstructured data (a text) and outputs structured data, specifically the identification of entities. Let us consider this short example.</p>
 <p><em>Martha, a senior, moved to Spain where she will be playing basketball until 05 June 2022 or until she can’t play any longer.</em></p>
 <p>In this example, we have several potential entities. First, there is “Martha”. Different NER models will have different coresponding labels for such an entity, but PERSON or PER is considered standard practice. Note here that the label is capitalized. This is also standard practice. We also have a GPE, or Geopolitical Entity, notably “Spain”. Finally, we have a DATE entity, “05 June 2022”. These are standard labels that one can expect to extract from a text. If the domain at hand, however, has additional labels, those can be extracted as well. Perhaps the client or user wants to not only extract people, GPEs, and dates, but also sports. In such a scenario “basketball” could be extracted and given the label SPORT.</p>
