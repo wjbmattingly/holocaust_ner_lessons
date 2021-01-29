@@ -17,6 +17,8 @@
     title: 02 Using EntityRuler to Create Training Set
   - file:  04_03_train_spacy_ner_model
     title: 03 How to Train spaCy NER Model
+- part: PART THREE Advanced NER Concepts
+  chapters:
   - file: 05_examining_a_spacy_model
     title: 01 Examining a spaCy Model in the Folder
   - file: 06_introduction_to_word_vectors
@@ -25,6 +27,8 @@
     title: 03 Generating Custom Word Vectors with Gensim
   - file: 08_loading_custom_word_vectors
     title: 04 Loading Custom Word Vectors into a spaCy Model
+- part: PART FOUR Solving a Domain-Specific Problem (Holocaust)
+  chapters:
   - file: 09_01_cultivating_concentration_camp_dataset
     title: 01 Cultivating Good Datasets for Entities          
   - file: 09_02_cultivating_corpus.ipynb
