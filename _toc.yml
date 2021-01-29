@@ -2,13 +2,15 @@
 - part: PART ONE Key Concepts and Terms
   chapters:
   - file: 01_01_introduction_to_ner
-    title: Introduction to Named Entity Recognition
+    title: 01 Introduction to Named Entity Recognition
   - file: 01_02_introduction_to_spacy
-    title: Introduction to spaCy
+    title: 02 Introduction to spaCy
   - file: 02_rules_based_ner
     title: 03 Rules-Based NER with spaCy
   - file: 03_machine_learning_ner
     title: 04 Machine Learning NER with spaCy
+- part: PART TWO The Basics of NER Training
+  chapters:
   - file: 04_01_spaCy_Entity_Ruler
     title: 01 Using SpaCy's EntityRuler
   - file: 04_02_create_ner_training_set
