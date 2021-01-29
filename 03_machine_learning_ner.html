@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Custom Named Entity Recognition for Holocaust Documents &#8212; Introduction to Named Entity Recognition</title>
+    <title>4. Custom Named Entity Recognition for Holocaust Documents &#8212; Introduction to Named Entity Recognition</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -55,7 +55,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Custom Named Entity Recognition for Holocaust Documents" href="04_01_spaCy_Entity_Ruler.html" />
-    <link rel="prev" title="Custom Named Entity Recognition for Holocaust Documents" href="02_rules_based_ner.html" />
+    <link rel="prev" title="3. Custom Named Entity Recognition for Holocaust Documents" href="02_rules_based_ner.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -100,22 +100,22 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="01_01_introduction_to_ner.html">
-   01 Introduction to Named Entity Recognition
+   1. Introduction to Named Entity Recognition
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_02_introduction_to_spacy.html">
-   02 Introduction to spaCy
+   2. Introduction to spaCy
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="02_rules_based_ner.html">
-   03 Rules-Based NER with spaCy
+   3. Rules-Based NER with spaCy
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   04 Machine Learning NER with spaCy
+   4. Machine Learning NER with spaCy
   </a>
  </li>
 </ul>
@@ -283,6 +283,7 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#center-part-03-center-br-center-machine-learning-ner-with-spacy-center">
+   4.1.
    <center>
     Part 03:
    </center>
@@ -294,47 +295,47 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
-     Key Concepts in this Notebook
+     4.1.1. Key Concepts in this Notebook
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#what-is-machine-learning">
-     What is Machine Learning?
+     4.1.2. What is Machine Learning?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#types-of-machine-learning">
-     Types of Machine Learning
+     4.1.3. Types of Machine Learning
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#supervised-learning-in-ner">
-     Supervised Learning in NER
+     4.1.4. Supervised Learning in NER
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#how-does-supervised-learning-work-math-alert">
-     How does Supervised Learning Work? (MATH ALERT!)
+     4.1.5. How does Supervised Learning Work? (MATH ALERT!)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#when-to-use-machine-learning-ner">
-     When to use Machine Learning NER
+     4.1.6. When to use Machine Learning NER
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-spacy-s-machine-learning-models">
-     Using spaCy’s Machine Learning Models
+     4.1.7. Using spaCy’s Machine Learning Models
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise">
-     Exercise
+     4.1.8. Exercise
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#video-for-machine-learning-ner">
-     Video for Machine Learning NER
+     4.1.9. Video for Machine Learning NER
     </a>
    </li>
   </ul>
@@ -351,13 +352,13 @@
               <div>
                 
   <div class="section" id="center-custom-named-entity-recognition-for-holocaust-documents-center">
-<h1><center> Custom Named Entity Recognition for Holocaust Documents</center><a class="headerlink" href="#center-custom-named-entity-recognition-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4. </span><center> Custom Named Entity Recognition for Holocaust Documents</center><a class="headerlink" href="#center-custom-named-entity-recognition-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="center-part-03-center-br-center-machine-learning-ner-with-spacy-center">
-<h2><center>Part 03:</center><br><center>Machine Learning NER with spaCy</center><a class="headerlink" href="#center-part-03-center-br-center-machine-learning-ner-with-spacy-center" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1. </span><center>Part 03:</center><br><center>Machine Learning NER with spaCy</center><a class="headerlink" href="#center-part-03-center-br-center-machine-learning-ner-with-spacy-center" title="Permalink to this headline">¶</a></h2>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2021</center><div class="section" id="key-concepts-in-this-notebook">
-<h3>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Machine Learning<br></p></li>
 <li><p>Statistics<br></p></li>
@@ -371,7 +372,7 @@
 </ol>
 </div>
 <div class="section" id="what-is-machine-learning">
-<h3>What is Machine Learning?<a class="headerlink" href="#what-is-machine-learning" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.2. </span>What is Machine Learning?<a class="headerlink" href="#what-is-machine-learning" title="Permalink to this headline">¶</a></h3>
 <p><strong>Machine learning</strong> is a branch of Artificial Intelligence. In order to understand artifical intelligence and how modern machine learning is different from its predecessor, I would recomend my video on the subject (a brief cinematic introduction to machine learning from my series on Machine Learning for DH.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -407,13 +408,13 @@
 </div>
 </div>
 <div class="section" id="types-of-machine-learning">
-<h3>Types of Machine Learning<a class="headerlink" href="#types-of-machine-learning" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.3. </span>Types of Machine Learning<a class="headerlink" href="#types-of-machine-learning" title="Permalink to this headline">¶</a></h3>
 <p>There are several different types of machine learning: supervised learning, unsupervised learning, and semi-supervised learning. There are others (such as reinforcement learning), but these are the three essential forms.</p>
 <p><strong>Supervised learning</strong> is when we train a system with known data. In the case of NER, we train a system with a series of texts with the entities appropriately annotated with their corresponding labels. <strong>Unsupervised learning</strong> occurs when you don’t know the categories of your data. You give the system a series of data and allow it to learn and identify patterns on its own. This is most popularly used for topic modeling and k-means (beyond the scope of this notebook). Finally, there is <strong>semi-supervised learning</strong> which falls between these two.</p>
 <p>Throughout this series, we will be using supervised learning and for that reason, I would like to explain this process from start to finish and then explain how it works.</p>
 </div>
 <div class="section" id="supervised-learning-in-ner">
-<h3>Supervised Learning in NER<a class="headerlink" href="#supervised-learning-in-ner" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.4. </span>Supervised Learning in NER<a class="headerlink" href="#supervised-learning-in-ner" title="Permalink to this headline">¶</a></h3>
 <p>As noted above, supervised learning is the process by which a system learns from a set of inputs that have known labels. In order to train properly, the input data is divided into three categories: training data, validation data, and testing data. There is no set percentage to asign to each of these categories. A good rule of thumb, however, is save 20% of all annotated data for testing and then divide the remaining 80% 80/20 (testing/validation) ratio.</p>
 <p>The first two, training data and validation data, are given to the system that is trying to learn. It uses the training data to hone a statistical model via predetermined algorithms. It does this by making guesses about what the proper labels are. It then checks its accuracy against the labels provided and makes adjustments accordingly.</p>
 <p>Once it is finished viewing and guessing across all the training data, the first epoch, or iteration over the data, is finished. At this stage, the model then tests its accuracy against the validation data. These are left out of the training process and give the system a sense of its overall performance.</p>
@@ -425,7 +426,7 @@
 <img alt="https://bigdata-madesimple.com/wp-content/uploads/2018/02/Machine-Learning-Explained1.png" src="https://bigdata-madesimple.com/wp-content/uploads/2018/02/Machine-Learning-Explained1.png" />
 </div>
 <div class="section" id="how-does-supervised-learning-work-math-alert">
-<h3>How does Supervised Learning Work? (MATH ALERT!)<a class="headerlink" href="#how-does-supervised-learning-work-math-alert" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.5. </span>How does Supervised Learning Work? (MATH ALERT!)<a class="headerlink" href="#how-does-supervised-learning-work-math-alert" title="Permalink to this headline">¶</a></h3>
 <p>As the heading indicates, this section will venture into the realm of math, specifically statistics and linear algebra. Even if you are not a fan of math, please do read this section as it contains the foundational principals behind machine learning. I will keep the math to a minimum in order to simply explain <em>how</em> machine learning works and, even more importantly <em>why</em>. This will give you a better sense of not only when to use a machine learning approach to NER, but why you might not get the results you want to see and how to improve them.</p>
 <p>The core concept behind supervised learning is the statistical model, a saved and usable system that can be given an input (a text) and output some sort of structured data (labels for entities). In order to understand what models are and how they work, I recommend watching the brief video below:</p>
 <div class="cell docutils container">
@@ -461,13 +462,13 @@
 </div>
 </div>
 <div class="section" id="when-to-use-machine-learning-ner">
-<h3>When to use Machine Learning NER<a class="headerlink" href="#when-to-use-machine-learning-ner" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.6. </span>When to use Machine Learning NER<a class="headerlink" href="#when-to-use-machine-learning-ner" title="Permalink to this headline">¶</a></h3>
 <p>In the last notebook, I explained when to use rules-based NER. Machine learning NER is useful when you cannot possible account for all variances of the entities in a corpus or creating such patterns would be so computationally expensive that its accuracy is not worth its use. A good example of this is every potential variation of a person’s name. Consider the immense quantity of names that exist in the world and the combinations and various ways those names can be combined to create a unique entity. Even if we only have 10,000 first names and 10,000 last names, to account for all variations would be 100,000,000 million patterns to match. And there are far more than simple 10,000 of each in the world.</p>
 <p>Another time to consider machine learning is when the data that will be fed to your system will not be entirely cleaned. Consider the example of names once again. Even if you had a system that could account for all 100,000,000 forms of those names, it will miss ones that have poor OCR or ones that have different text encoding because it was a text created prior to UTF-8.</p>
 <p>In these instances machine learning is the right choice because machine learning NER models do not memorize entities. They learn entities. This means that if a model encounters an entity it has never seen before (even if poorly OCRed), it has the ability to <strong>generalize</strong> and identify that entity with the correct label.</p>
 </div>
 <div class="section" id="using-spacy-s-machine-learning-models">
-<h3>Using spaCy’s Machine Learning Models<a class="headerlink" href="#using-spacy-s-machine-learning-models" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.7. </span>Using spaCy’s Machine Learning Models<a class="headerlink" href="#using-spacy-s-machine-learning-models" title="Permalink to this headline">¶</a></h3>
 <p>Fortunately, as we will see in this series, spaCy makes not only using machine learning models easy, but drastically reduces the complexity of training custom machine learning NER models.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -529,11 +530,11 @@ New Yasdfasasdfrk City GPE
 <p>Notice that despite introducing textual corruption, the model performs precisely the same way. The reason? Because it has learned from context. It has likely seen the word “hosted” before and knows that people typically host. It has seen the word City capitalized often used to describe a GPE. This is why machine learning offers the solution for inconsistent entities or entities that are so vast that incorperating them all into an EntityRuler would be impossible.</p>
 </div>
 <div class="section" id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.8. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
 <p>In the code space provided below try to push the small English model. Make some guesses based on what you’ve learned why the model either succeeds or fails to identify entities despite the textual corruptions you introduce.</p>
 </div>
 <div class="section" id="video-for-machine-learning-ner">
-<h3>Video for Machine Learning NER<a class="headerlink" href="#video-for-machine-learning-ner" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.9. </span>Video for Machine Learning NER<a class="headerlink" href="#video-for-machine-learning-ner" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
@@ -581,7 +582,7 @@ New Yasdfasasdfrk City GPE
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="02_rules_based_ner.html" title="previous page"><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
+    <a class='left-prev' id="prev-link" href="02_rules_based_ner.html" title="previous page"><span class="section-number">3. </span><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
     <a class='right-next' id="next-link" href="04_01_spaCy_Entity_Ruler.html" title="next page"><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
 
     </div>

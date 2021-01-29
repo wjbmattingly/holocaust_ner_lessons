@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Custom Named Entity Recognition for Holocaust Documents &#8212; Introduction to Named Entity Recognition</title>
+    <title>3. Custom Named Entity Recognition for Holocaust Documents &#8212; Introduction to Named Entity Recognition</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Custom Named Entity Recognition for Holocaust Documents" href="03_machine_learning_ner.html" />
-    <link rel="prev" title="Custom Named Entity Recognition for Holocaust Documents" href="01_02_introduction_to_spacy.html" />
+    <link rel="next" title="4. Custom Named Entity Recognition for Holocaust Documents" href="03_machine_learning_ner.html" />
+    <link rel="prev" title="2. Custom Named Entity Recognition for Holocaust Documents" href="01_02_introduction_to_spacy.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -100,22 +100,22 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="01_01_introduction_to_ner.html">
-   01 Introduction to Named Entity Recognition
+   1. Introduction to Named Entity Recognition
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01_02_introduction_to_spacy.html">
-   02 Introduction to spaCy
+   2. Introduction to spaCy
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   03 Rules-Based NER with spaCy
+   3. Rules-Based NER with spaCy
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_machine_learning_ner.html">
-   04 Machine Learning NER with spaCy
+   4. Machine Learning NER with spaCy
   </a>
  </li>
 </ul>
@@ -283,6 +283,7 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#center-part-02-01-center-br-center-rules-based-ner-with-spacy-center">
+   3.1.
    <center>
     Part 02.01:
    </center>
@@ -294,42 +295,42 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
-     Key Concepts in this Notebook
+     3.1.1. Key Concepts in this Notebook
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#what-is-rules-based-ner">
-     What is Rules-Based NER?
+     3.1.2. What is Rules-Based NER?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#why-bother-with-rules-based-ner">
-     Why Bother with Rules-Based NER?
+     3.1.3. Why Bother with Rules-Based NER?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#when-to-use-rules-based-ner">
-     When to Use Rules-Based NER
+     3.1.4. When to Use Rules-Based NER
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-limitations-of-rules-based-ner">
-     The Limitations of Rules-Based NER
+     3.1.5. The Limitations of Rules-Based NER
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#spacy-s-entityruler">
-     SpaCy’s EntityRuler
+     3.1.6. SpaCy’s EntityRuler
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise">
-     Exercise
+     3.1.7. Exercise
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#video-for-rules-based-ner">
-     Video for Rules-Based NER
+     3.1.8. Video for Rules-Based NER
     </a>
    </li>
   </ul>
@@ -346,13 +347,13 @@
               <div>
                 
   <div class="section" id="center-custom-named-entity-recognition-for-holocaust-documents-center">
-<h1><center> Custom Named Entity Recognition for Holocaust Documents</center><a class="headerlink" href="#center-custom-named-entity-recognition-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span><center> Custom Named Entity Recognition for Holocaust Documents</center><a class="headerlink" href="#center-custom-named-entity-recognition-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="center-part-02-01-center-br-center-rules-based-ner-with-spacy-center">
-<h2><center>Part 02.01:</center><br><center>Rules-Based NER with spaCy</center><a class="headerlink" href="#center-part-02-01-center-br-center-rules-based-ner-with-spacy-center" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span><center>Part 02.01:</center><br><center>Rules-Based NER with spaCy</center><a class="headerlink" href="#center-part-02-01-center-br-center-rules-based-ner-with-spacy-center" title="Permalink to this headline">¶</a></h2>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2021</center><div class="section" id="key-concepts-in-this-notebook">
-<h3>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Rules-based NER<br></p></li>
 <li><p>gazatteer<br></p></li>
@@ -362,7 +363,7 @@
 </ol>
 </div>
 <div class="section" id="what-is-rules-based-ner">
-<h3>What is Rules-Based NER?<a class="headerlink" href="#what-is-rules-based-ner" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.2. </span>What is Rules-Based NER?<a class="headerlink" href="#what-is-rules-based-ner" title="Permalink to this headline">¶</a></h3>
 <p>As I mentioned in the previous notebook, there are two types of NLP and NER: rules-based and machine learning-based. This notebook will be dedicated to rules-based, while the next one will be dedicated to machine learning-based.</p>
 <p>Rules-based NER is the method by which an NLP practitioner either creates or utalizes an NLP system that has a predefined set of instructions, or rules, to perform certain NLP tasks. For NER, this often times means using what is known as a gazatteer. A <strong>gazatteer</strong> is a list, or dictionary, of entities that align with a specific label. In the case of people, this would be a list of first and last names. If you are developing an NER for a specific region, as we will in a later notebook, this may be a list of all locations in that region.</p>
 <p>Well-cultivated gazatteers served as the primary method for performing NER in the early twenty-first century. It is still a staple in some NLP frameworks, such as v.0.01 of the Classical Language Toolkit (CLTK), which is currently being replaced with machine learning models.</p>
@@ -379,22 +380,22 @@
 <p>There are likely other potential variations, but my point is that there is a limited number of ways of representing a date. For this reason, finding and extraction temporal entities in texts is usually fairly easy via rules-based pattern methods. The problem becomes even easier if dates are only represented a few ways. One could develop a pattern to find any instance of a number, followed by a capital word or visa versa as a date.</p>
 </div>
 <div class="section" id="why-bother-with-rules-based-ner">
-<h3>Why Bother with Rules-Based NER?<a class="headerlink" href="#why-bother-with-rules-based-ner" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.3. </span>Why Bother with Rules-Based NER?<a class="headerlink" href="#why-bother-with-rules-based-ner" title="Permalink to this headline">¶</a></h3>
 <p>I mentioned in the previous notebook that NLP is moving away from rules-based methods and toward machine learning-based ones. You may be thinking, why you should learn rules-based NLP and NER.</p>
 <p>The answer is because there remain certain situations in which a rules-based solution is better than a machine learning-based one. Further, there are times when a combination of the two is more suited. In order to understand <em>when</em> to use which solution is important and, therefore, a firm foundation in rules-based NER is essential in order to do machine learning NER.</p>
 </div>
 <div class="section" id="when-to-use-rules-based-ner">
-<h3>When to Use Rules-Based NER<a class="headerlink" href="#when-to-use-rules-based-ner" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.4. </span>When to Use Rules-Based NER<a class="headerlink" href="#when-to-use-rules-based-ner" title="Permalink to this headline">¶</a></h3>
 <p>This raises an important question. <em>When should you use a rules-based NER approach?</em> The answer is simple. When there are a finite number of ways a specific entity will be represented so that you can catch roughly 95-97% of them with such rules. I say 95-97% not because this is the industry standard, rather because this is my goal for my NER models. If I can use a rules-based approach and achieve equal accuracy as an ML model, I will likely do that because the time it takes to implement a rules-based approach to NER is often less than the time it takes to train, validate, and test a machine learning model.</p>
 <p>As we will see in the video below, this is a particularly useful approach when you know every potential name in a corpus, such as we will see with the toy example of Harry Potter.</p>
 </div>
 <div class="section" id="the-limitations-of-rules-based-ner">
-<h3>The Limitations of Rules-Based NER<a class="headerlink" href="#the-limitations-of-rules-based-ner" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.5. </span>The Limitations of Rules-Based NER<a class="headerlink" href="#the-limitations-of-rules-based-ner" title="Permalink to this headline">¶</a></h3>
 <p>A key thing to remember, however, is that rules-based methods are precisely that: rules-based. If an entity falls outside of the rule you have developed, then it will not be flagged as an entity. This is particularly prevenlant in texts that have been OCRed, typed without spellcheck, unedited, or any form of uncleaned text.</p>
 <p>While cleaning texts is an essential component to proper data preparation for NLP, it is sometimes impossible to clean entirely a text and, sometimes, an individual using your particular NER framework may not know to clean texts before hand. This is the chief limitation of rules-based methods and it is one of the chief reasons researchers use machine learning methods today. Machine learning models learn and can, therefore, generalize on unseen data, despite variance (to an extent) from things it has seen in the past. We will explore this in greater detail in the next notebook.</p>
 </div>
 <div class="section" id="spacy-s-entityruler">
-<h3>SpaCy’s EntityRuler<a class="headerlink" href="#spacy-s-entityruler" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.6. </span>SpaCy’s EntityRuler<a class="headerlink" href="#spacy-s-entityruler" title="Permalink to this headline">¶</a></h3>
 <p>While spaCy is chiefly a machine learning NLP library, it possess the ability to use rules-based NER methods. This is a major strength of the library, for as we shall see to develop a strong NER system for many difficult domains, a combination of rules-based and machine learning-based approaches are sometimes essential.</p>
 <p>There are a few ways to engage in rules-based NER with spaCy, but one of the more fundamental is its EntityRuler.</p>
 <p>Let’s return to our sample sentence from the first notebook with Martha the basketball player. In this scenario, we want to not only extract the normal entities from the text (PERSON, DATE, etc.), but also a new entity SPORT. In a later notebook, we will discuss adding custom entities in much more detail. For now, we will use this simple toy example to demonstrate how rules-based NER works.</p>
@@ -437,7 +438,7 @@
 </div>
 </div>
 <div class="section" id="exercise">
-<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.7. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
 <p>We see that the output is as desired. We have extracted basektball, the string, and its correct label, SPORT. Don’t be alarmed if you don’t entirely understand how the code above works. By the end of this series, you will. For now, simply understand <em>how</em> rules-based NER works. Expirement with the code above and try to create a model below that can identify soccer as a SPORT in the following text:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -451,7 +452,7 @@
 </div>
 </div>
 <div class="section" id="video-for-rules-based-ner">
-<h3>Video for Rules-Based NER<a class="headerlink" href="#video-for-rules-based-ner" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.1.8. </span>Video for Rules-Based NER<a class="headerlink" href="#video-for-rules-based-ner" title="Permalink to this headline">¶</a></h3>
 <p>Once you’ve finished with the above exercise, check out the video on Rules-Based NER below. It reinforces some of these concepts and explores them in a larger context, specifically via the first book of Harry Potter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -500,8 +501,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="01_02_introduction_to_spacy.html" title="previous page"><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
-    <a class='right-next' id="next-link" href="03_machine_learning_ner.html" title="next page"><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
+    <a class='left-prev' id="prev-link" href="01_02_introduction_to_spacy.html" title="previous page"><span class="section-number">2. </span><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
+    <a class='right-next' id="next-link" href="03_machine_learning_ner.html" title="next page"><span class="section-number">4. </span><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
