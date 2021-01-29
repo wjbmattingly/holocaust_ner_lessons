@@ -1,39 +1,39 @@
 - file: intro
-- part: PART ONE - Key Concepts and Terms
+- part: PART ONE Key Concepts and Terms
     chapters:
     - file: 01_01_introduction_to_ner
-      title: 01: Introduction to Named Entity Recognition
+      title: 01 Introduction to Named Entity Recognition
     - file: 01_02_introduction_to_spacy
-      title: 02: Introduction to spaCy
+      title: 02 Introduction to spaCy
     - file: 02_rules_based_ner
-      title: 03: Rules-Based NER with spaCy
+      title: 03 Rules-Based NER with spaCy
     - file: 03_machine_learning_ner
-      title: 04: Machine Learning NER with spaCy
-- part: PART TWO - The Basics of NER Training
+      title: 04 Machine Learning NER with spaCy
+- part: PART TWO The Basics of NER Training
     chapters:
     - file: 04_01_spaCy_Entity_Ruler
-      title: 01: Using SpaCy's EntityRuler
+      title: 01 Using SpaCy's EntityRuler
     - file: 04_02_create_ner_training_set
-      title: 02: Using EntityRuler to Create Training Set
+      title: 02 Using EntityRuler to Create Training Set
     - file:  04_03_train_spacy_ner_model
-      title: 03: How to Train spaCy NER Model
+      title: 03 How to Train spaCy NER Model
  - part: PART THREE - Advanced NER Concepts
     chapters:
     - file: 05_examining_a_spacy_model
-      title: 01: Examining a spaCy Model in the Folder
+      title: 01 Examining a spaCy Model in the Folder
     - file: 06_introduction_to_word_vectors
-      title: 02: Introduction to Word Vectors
+      title: 02 Introduction to Word Vectors
     - file: 07_generating_custom_word_vectors
-      title: 03: Generating Custom Word Vectors with Gensim
+      title: 03 Generating Custom Word Vectors with Gensim
     - file: 08_loading_custom_word_vectors
-      title: 04: Loading Custom Word Vectors into a spaCy Model
+      title: 04 Loading Custom Word Vectors into a spaCy Model
 - part: PART FOUR - Solving a Domain-Specific Problem (Holocaust)
     chapters:
     - file: 09_01_cultivating_concentration_camp_dataset
-      title: 01: Cultivating Good Datasets for Entities          
+      title: 01 Cultivating Good Datasets for Entities          
     - file: 09_02_cultivating_corpus.ipynb
-      title: 02: Cultivating a Corpus
+      title: 02 Cultivating a Corpus
     - file: 10_the_challenges_of_holocaust_ner
-      title: 03: The Challenges of Holocaust NER
+      title: 03 The Challenges of Holocaust NER
     - file: 11_introduction_to_custom_pipes
-      title: 04: Introduction to Custom Pipes
+      title: 04 Introduction to Custom Pipes
