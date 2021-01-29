@@ -1,5 +1,5 @@
 - file: intro
-  numbered: true
+numbered: true
 - part: Key Concepts and Terms
   numbered: true
   chapters:
