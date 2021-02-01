@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Custom Named Entity Recognition for Holocaust Documents &#8212; Introduction to Named Entity Recognition</title>
+    <title>2. Introduction to spaCy &#8212; Introduction to Named Entity Recognition</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Custom Named Entity Recognition for Holocaust Documents" href="02_rules_based_ner.html" />
-    <link rel="prev" title="1. Custom Named Entity Recognition for Holocaust Documents" href="01_01_introduction_to_ner.html" />
+    <link rel="next" title="3. Rules-Based NER with spaCy" href="02_rules_based_ner.html" />
+    <link rel="prev" title="1. Introduction to Named Entity Recognition" href="01_01_introduction_to_ner.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -284,59 +284,49 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#center-introduction-to-spacy-center">
-   2.1.
-   <center>
-    Introduction to spaCy
-   </center>
+  <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
+   2.1. Key Concepts in this Notebook
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
-     2.1.1. Key Concepts in this Notebook
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-are-frameworks">
-     2.1.2. What are Frameworks?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-spacy">
-     2.1.3. What is spaCy?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sentence-tokenization">
-     2.1.4. Sentence Tokenization
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#named-entity-recognition">
-     2.1.5. Named Entity Recognition
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#part-of-speech">
-     2.1.6. Part-of-Speech
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extracting-nouns-and-noun-chunks">
-     2.1.7. Extracting Nouns and Noun Chunks
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extracting-verbs-and-verb-phrases">
-     2.1.8. Extracting Verbs and Verb Phrases
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lemmatization">
-     2.1.9. Lemmatization
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-frameworks">
+   2.2. What are Frameworks?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-spacy">
+   2.3. What is spaCy?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentence-tokenization">
+   2.4. Sentence Tokenization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#named-entity-recognition">
+   2.5. Named Entity Recognition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-of-speech">
+   2.6. Part-of-Speech
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extracting-nouns-and-noun-chunks">
+   2.7. Extracting Nouns and Noun Chunks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extracting-verbs-and-verb-phrases">
+   2.8. Extracting Verbs and Verb Phrases
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lemmatization">
+   2.9. Lemmatization
+  </a>
  </li>
 </ul>
 
@@ -349,14 +339,12 @@
         
               <div>
                 
-  <div class="section" id="center-custom-named-entity-recognition-for-holocaust-documents-center">
-<h1><span class="section-number">2. </span><center> Custom Named Entity Recognition for Holocaust Documents</center><a class="headerlink" href="#center-custom-named-entity-recognition-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="center-introduction-to-spacy-center">
-<h2><span class="section-number">2.1. </span><center>Introduction to spaCy</center><a class="headerlink" href="#center-introduction-to-spacy-center" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="center-introduction-to-spacy-center">
+<h1><span class="section-number">2. </span><center>Introduction to spaCy</center><a class="headerlink" href="#center-introduction-to-spacy-center" title="Permalink to this headline">¶</a></h1>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2021</center><div class="section" id="key-concepts-in-this-notebook">
-<h3><span class="section-number">2.1.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">2.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>frameworks<br></p></li>
 <li><p>libraries<br></p></li>
@@ -370,7 +358,7 @@
 </ol>
 </div>
 <div class="section" id="what-are-frameworks">
-<h3><span class="section-number">2.1.2. </span>What are Frameworks?<a class="headerlink" href="#what-are-frameworks" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">2.2. </span>What are Frameworks?<a class="headerlink" href="#what-are-frameworks" title="Permalink to this headline">¶</a></h2>
 <p>In order to engage in NLP, a researcher must first decide upon the framework they wish to use. <strong>Framework</strong> is a word that describes the software used by the researcher to engage in a specific task. A good way to think about a framework in Pythonic terms is as a <strong>library</strong>, or packaged set of usable classes and functions to perform complex tasks easily. Deciding which framework to use depends on a few variables.</p>
 <p>First, not all frameworks support all languages and not all frameworks support the same languages equally.</p>
 <p>Second, certain frameworks perform certain tasks better than others. While all frameworks will tokenize equally well (usually), the way in which some tasks, such as finding the root of words via lemmatization (spaCy) vs. stemming (Stanza) will vary. Decision on a framework for this purpose typically lies in the realm of computational linguistics or distance reading for the purpose of finding how a word (or words) appear in texts in all forms (conjugated and declined).</p>
@@ -378,7 +366,7 @@
 <p>Most frameworks today are moving away from a rules-based approach to NLP in favor of a machine learning-based approach. <strong>Machine learning-based</strong> NLP is the process by which developers use statistics to teach a computer system (known as a model) to perform a task based on past experiences (known as training). We will be speaking much more about machine learning-based NLP later in a later notebook as spaCy, the chief subject of this notebook, is a machine learning-based Python library.</p>
 </div>
 <div class="section" id="what-is-spacy">
-<h3><span class="section-number">2.1.3. </span>What is spaCy?<a class="headerlink" href="#what-is-spacy" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">2.3. </span>What is spaCy?<a class="headerlink" href="#what-is-spacy" title="Permalink to this headline">¶</a></h2>
 <p>The spaCy (spelled correctly) library is a robust machine learning NLP library developed by Explosion AI, a Berlin based team of computer scientists and computational linguists. It supports a wide variety of European languages out-of-the-box with statistical models capable of parsing texts, identifying parts-of-speech, and extract entities. SpaCy is also capable of easily improving or training from scratch custom models on domain-specific texts.</p>
 <p>In this notebook, we will go through the steps for installing spaCy, downloading a pretrained language model, and performing the essential tasks of NLP.</p>
 <p>In order to download and install spaCy and the model, one must do so outside of this notebook. Please watch the video below and follow the necessary steps:</p>
@@ -399,7 +387,7 @@
 </div>
 </div>
 <div class="section" id="sentence-tokenization">
-<h3><span class="section-number">2.1.4. </span>Sentence Tokenization<a class="headerlink" href="#sentence-tokenization" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">2.4. </span>Sentence Tokenization<a class="headerlink" href="#sentence-tokenization" title="Permalink to this headline">¶</a></h2>
 <p>A common essential task of NLP is known as tokenization. We looked at tokenization briefly in the last notebook in which we wanted to break a text into individual components. This is one form of tokenization known as word tokenization. There are, however, many other forms, such as sentence tokenization. <strong>Sentence tokenization</strong> is precisely the same as word tokenization, except instead of breaking a text up into individual word and puncation components, we break a text up into individual sentences.</p>
 <p>If you are familiar with Python, you may be familiar with the built-in split() function which allows for a programmer to split a text by whitespace (default) or by passing an argument of a string to define where to split a text, i.e. split(“.”). A common practice (without NLP frameworks) is to split a text into sentences by simply using the split function, but this is ill-advised. Let us consider the example below</p>
 <div class="cell docutils container">
@@ -509,7 +497,7 @@ He is also good at programming.
 </div>
 </div>
 <div class="section" id="named-entity-recognition">
-<h3><span class="section-number">2.1.5. </span>Named Entity Recognition<a class="headerlink" href="#named-entity-recognition" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">2.5. </span>Named Entity Recognition<a class="headerlink" href="#named-entity-recognition" title="Permalink to this headline">¶</a></h2>
 <p>Another essential task of NLP, and the chief subject of this series, is named entity recognition (NER). I spoke about NER in the last notebook. Here, I’d like to demonstrate how to perform basic NER via spaCy. Again, we will iterate over the doc object as we did above, but instead of iterating over doc.sents, we will iterate over doc.ents. For our purposes right now, I simply want to print off each entity’s text (the string itself) and its corresponding label (note the _ after label). I will be explaining this process in much greater detail in the next two notebooks.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -542,7 +530,7 @@ He is also good at programming.
 </div>
 </div>
 <div class="section" id="part-of-speech">
-<h3><span class="section-number">2.1.6. </span>Part-of-Speech<a class="headerlink" href="#part-of-speech" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">2.6. </span>Part-of-Speech<a class="headerlink" href="#part-of-speech" title="Permalink to this headline">¶</a></h2>
 <p>In the field of computational linguistics, understanding parts-of-speech is essential. SpaCy offers an easy way to parse a text and identify its parts of speech. Below, we will iterate across each token (word or punctuation) in the text and identify its part of speech.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -591,7 +579,7 @@ programming NOUN
 </div>
 </div>
 <div class="section" id="extracting-nouns-and-noun-chunks">
-<h3><span class="section-number">2.1.7. </span>Extracting Nouns and Noun Chunks<a class="headerlink" href="#extracting-nouns-and-noun-chunks" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">2.7. </span>Extracting Nouns and Noun Chunks<a class="headerlink" href="#extracting-nouns-and-noun-chunks" title="Permalink to this headline">¶</a></h2>
 <p>Often times when working with a text, we need to extract nouns and noun chunks. There are a few different ways that we can do this via spaCy. To extract nouns, we can use the doc.noun_chunks attribute.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -627,7 +615,7 @@ programming
 </div>
 </div>
 <div class="section" id="extracting-verbs-and-verb-phrases">
-<h3><span class="section-number">2.1.8. </span>Extracting Verbs and Verb Phrases<a class="headerlink" href="#extracting-verbs-and-verb-phrases" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">2.8. </span>Extracting Verbs and Verb Phrases<a class="headerlink" href="#extracting-verbs-and-verb-phrases" title="Permalink to this headline">¶</a></h2>
 <p>We can do precisely the same thing with verbs and verb phrases by developing predefined patterns using RegEx. This is a bit more complicated and requires an understanding of linguistic patterns and the textacy library. We will try to find all instances of a specific pattern, an auxillary verb followed by a normal verb.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -673,7 +661,7 @@ programming
 </div>
 </div>
 <div class="section" id="lemmatization">
-<h3><span class="section-number">2.1.9. </span>Lemmatization<a class="headerlink" href="#lemmatization" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">2.9. </span>Lemmatization<a class="headerlink" href="#lemmatization" title="Permalink to this headline">¶</a></h2>
 <p>The final item I’d like to explore in this notebook is lemmatization. <strong>Lemmatization</strong> is an essential component in most NLP frameworks, though some libraries perform this concept differently. While libraries, such as Stanza will find word stems, spaCy will find word lemmas. They are technically a little different, but both seek to reduce all words to their roots. To find lemmas via spaCy, we use the same process as we did for finding a word’s part of speech, via iterating over the tokens in the doc object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -722,7 +710,6 @@ programming programming
 </div>
 </div>
 </div>
-</div>
 
     <script type="text/x-thebe-config">
     {
@@ -752,8 +739,8 @@ programming programming
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="01_01_introduction_to_ner.html" title="previous page"><span class="section-number">1. </span><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
-    <a class='right-next' id="next-link" href="02_rules_based_ner.html" title="next page"><span class="section-number">3. </span><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
+    <a class='left-prev' id="prev-link" href="01_01_introduction_to_ner.html" title="previous page"><span class="section-number">1. </span><center>Introduction to Named Entity Recognition</center></a>
+    <a class='right-next' id="next-link" href="02_rules_based_ner.html" title="next page"><span class="section-number">3. </span><center>Rules-Based NER with spaCy</center></a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

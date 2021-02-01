@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Custom Named Entity Recognition for Holocaust Documents &#8212; Introduction to Named Entity Recognition</title>
+    <title>1. Introduction to Named Entity Recognition &#8212; Introduction to Named Entity Recognition</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,7 +54,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2. Custom Named Entity Recognition for Holocaust Documents" href="01_02_introduction_to_spacy.html" />
+    <link rel="next" title="2. Introduction to spaCy" href="01_02_introduction_to_spacy.html" />
     <link rel="prev" title="INTRODUCTION TO NAMED ENTITY RECOGNITION" href="intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -284,39 +284,29 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#center-introduction-to-named-entity-recognition-center">
-   1.1.
-   <center>
-    Introduction to Named Entity Recognition
-   </center>
+  <a class="reference internal nav-link" href="#introduction-to-this-series-of-notebooks">
+   1.1. Introduction to this Series of Notebooks
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#introduction-to-this-series-of-notebooks">
-     1.1.1. Introduction to this Series of Notebooks
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
-     1.1.2. Key Concepts in this Notebook
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-natural-language-processing">
-     1.1.3. What is Natural Language Processing?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-named-entity-recognition">
-     1.1.4. What is Named Entity Recognition?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#video-explanation-on-ner">
-     1.1.5. Video Explanation on NER
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
+   1.2. Key Concepts in this Notebook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-natural-language-processing">
+   1.3. What is Natural Language Processing?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-named-entity-recognition">
+   1.4. What is Named Entity Recognition?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video-explanation-on-ner">
+   1.5. Video Explanation on NER
+  </a>
  </li>
 </ul>
 
@@ -329,14 +319,12 @@
         
               <div>
                 
-  <div class="section" id="center-custom-named-entity-recognition-for-holocaust-documents-center">
-<h1><span class="section-number">1. </span><center> Custom Named Entity Recognition for Holocaust Documents</center><a class="headerlink" href="#center-custom-named-entity-recognition-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="center-introduction-to-named-entity-recognition-center">
-<h2><span class="section-number">1.1. </span><center>Introduction to Named Entity Recognition</center><a class="headerlink" href="#center-introduction-to-named-entity-recognition-center" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="center-introduction-to-named-entity-recognition-center">
+<h1><span class="section-number">1. </span><center>Introduction to Named Entity Recognition</center><a class="headerlink" href="#center-introduction-to-named-entity-recognition-center" title="Permalink to this headline">¶</a></h1>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2021</center><div class="section" id="introduction-to-this-series-of-notebooks">
-<h3><span class="section-number">1.1.1. </span>Introduction to this Series of Notebooks<a class="headerlink" href="#introduction-to-this-series-of-notebooks" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">1.1. </span>Introduction to this Series of Notebooks<a class="headerlink" href="#introduction-to-this-series-of-notebooks" title="Permalink to this headline">¶</a></h2>
 <p>These notebooks are designed for those interested in training custom named entity recognition models via the spaCy library. They are intended those who have limited coding experience and no background in natural language processing (NLP). A basic understanding of Python is necessary to partake fully in this series, however, those with no coding experience will still gain a foundational understanding of natural language processing, named entity recognition, the common problems in these fields, and solutions to those problems. For those interested in gaining a quick introduction to Python, please see my series designed for digital humanists at PythonHumanities.com.</p>
 <p>The purposes of these notebooks is fivefold.</p>
 <ol class="simple">
@@ -350,7 +338,7 @@
 <p>Key concepts and terminology will be emboldened. If there are mistakes in grammar, spelling, or code, please reach out to me via twitter (&#64;wjb_mattingly) and I will update the notebooks accordingly.</p>
 </div>
 <div class="section" id="key-concepts-in-this-notebook">
-<h3><span class="section-number">1.1.2. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">1.2. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>natural language processing (NLP)<br></p></li>
 <li><p>named entity recognition (NER)<br></p></li>
@@ -361,7 +349,7 @@
 </ol>
 </div>
 <div class="section" id="what-is-natural-language-processing">
-<h3><span class="section-number">1.1.3. </span>What is Natural Language Processing?<a class="headerlink" href="#what-is-natural-language-processing" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">1.3. </span>What is Natural Language Processing?<a class="headerlink" href="#what-is-natural-language-processing" title="Permalink to this headline">¶</a></h2>
 <p>Named entity recognition (addressed below) is a branch of <strong>natural language processing</strong>, better known as <strong>NLP</strong>. NLP is the process by which a researcher uses a computer system to parse human language and extract important metadata from texts. The purpose of NLP is to perform, among other things, <strong>distance reading</strong>.</p>
 <p>Distance reading has a long history extending to the late-twentieth century. It is commonly used when the quantity of texts in a given corpus prevent a researcher (or a team of researchers) from reading the corpus <em>closely</em> in its entirety. In order to make sense of that large corpus, the researcher will often pass certain tasks to a computer with the understanding that there is a margin of error. This margin of error is accepted in exchange for the ability to gain a larger, <em>distant</em> understanding of that corpus. Distance reading is used to perform several significant tasks, such as:</p>
 <ol class="simple">
@@ -380,7 +368,7 @@
 <p>Named entity recognition will often times come later in a pipeline because it needs to receive a tokenized text and, in some languages, it needs to understand a words POS to perform well. As a text moves through the pipeline, it receives <strong>spans</strong> that contain valuable information, such as part of speech. Once the text reaches the NER pipeline, it is time for the machine to make some structured decisions about individual tokens.</p>
 </div>
 <div class="section" id="what-is-named-entity-recognition">
-<h3><span class="section-number">1.1.4. </span>What is Named Entity Recognition?<a class="headerlink" href="#what-is-named-entity-recognition" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">1.4. </span>What is Named Entity Recognition?<a class="headerlink" href="#what-is-named-entity-recognition" title="Permalink to this headline">¶</a></h2>
 <p><strong>Entities</strong> are words in a text that correspond to a specific type of data. They can be <em>numerical</em>, such as cardinal numbers; <em>temporal</em>, such as dates; <em>nominal</em>, such as names of people and places; and <em>political</em>, such as geopolitical entities (GPE). In short, an entity can be anything the designer whishes to designate as an item in a text that has a corresponding label.</p>
 <p>Named entity recognition, or <strong>NER</strong>, is the process by which a system takes an input of unstructured data (a text) and outputs structured data, specifically the identification of entities. Let us consider this short example.</p>
 <p><em>Martha, a senior, moved to Spain where she will be playing basketball until 05 June 2022 or until she can’t play any longer.</em></p>
@@ -391,7 +379,7 @@
 <p>As we progress through these notebooks and videos, we will learn new NER concepts. For now, I recommend watching the video below. Each notebook, including this one, will have a corresponding video lesson.</p>
 </div>
 <div class="section" id="video-explanation-on-ner">
-<h3><span class="section-number">1.1.5. </span>Video Explanation on NER<a class="headerlink" href="#video-explanation-on-ner" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">1.5. </span>Video Explanation on NER<a class="headerlink" href="#video-explanation-on-ner" title="Permalink to this headline">¶</a></h2>
 <p>In this video, I explain these concepts and outline the future parts of this blog.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -407,7 +395,6 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/E9h8qVm2uNY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div></div>
-</div>
 </div>
 </div>
 </div>
@@ -441,7 +428,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="intro.html" title="previous page"><p align="center">INTRODUCTION TO NAMED ENTITY RECOGNITION</p></a>
-    <a class='right-next' id="next-link" href="01_02_introduction_to_spacy.html" title="next page"><span class="section-number">2. </span><center> Custom Named Entity Recognition for Holocaust Documents</center></a>
+    <a class='right-next' id="next-link" href="01_02_introduction_to_spacy.html" title="next page"><span class="section-number">2. </span><center>Introduction to spaCy</center></a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
