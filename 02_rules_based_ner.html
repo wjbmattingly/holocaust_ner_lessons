@@ -360,7 +360,7 @@
 <h2><span class="section-number">3.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Rules-based NER<br></p></li>
-<li><p>gazatteer<br></p></li>
+<li><p>gazetteer<br></p></li>
 <li><p>When to use rules-based NER<br></p></li>
 <li><p>The benefits and limitations of rules-based NER<br></p></li>
 <li><p>SpaCy’s EntityRuler<br></p></li>
@@ -369,8 +369,8 @@
 <div class="section" id="what-is-rules-based-ner">
 <h2><span class="section-number">3.2. </span>What is Rules-Based NER?<a class="headerlink" href="#what-is-rules-based-ner" title="Permalink to this headline">¶</a></h2>
 <p>As I mentioned in the previous notebook, there are two types of NLP and NER: rules-based and machine learning-based. This notebook will be dedicated to rules-based, while the next one will be dedicated to machine learning-based.</p>
-<p>Rules-based NER is the method by which an NLP practitioner either creates or utalizes an NLP system that has a predefined set of instructions, or rules, to perform certain NLP tasks. For NER, this often times means using what is known as a gazatteer. A <strong>gazatteer</strong> is a list, or dictionary, of entities that align with a specific label. In the case of people, this would be a list of first and last names. If you are developing an NER for a specific region, as we will in a later notebook, this may be a list of all locations in that region.</p>
-<p>Well-cultivated gazatteers served as the primary method for performing NER in the early twenty-first century. It is still a staple in some NLP frameworks, such as v.0.01 of the Classical Language Toolkit (CLTK), which is currently being replaced with machine learning models.</p>
+<p>Rules-based NER is the method by which an NLP practitioner either creates or utalizes an NLP system that has a predefined set of instructions, or rules, to perform certain NLP tasks. For NER, this often times means using what is known as a gazetteer. A <strong>gazetteer</strong> is a list, or dictionary, of entities that align with a specific label. In the case of people, this would be a list of first and last names. If you are developing an NER for a specific region, as we will in a later notebook, this may be a list of all locations in that region.</p>
+<p>Well-cultivated gazetteer served as the primary method for performing NER in the early twenty-first century. It is still a staple in some NLP frameworks, such as v.0.01 of the Classical Language Toolkit (CLTK), which is currently being replaced with machine learning models.</p>
 <p>Sometimes, however, a researcher may not have a list of all potential names in a domain. In these instances, should one wish to pursue rules-based NLP, one would utalize pattern rules-based NER. In this scenario, the researcher creates a specific set of patterns to find and then presume that anything that aligns with that pattern is a specific entity. This can be used for places, i.e. Berlin, Germany; London, England, Dallas, Texas. In this scenario, one could use string pattern libraries, such as RegEx (Regular Expressions) to find instances of a capitalized word, followed by a comma, followed by another capitalized word and presume that such an occurence is a PLACE. More commonly, however, such a method is used to find dates in a text. While there are many ways to represent a date, there are a limited number of patterns. For example, were I to want to represent January 1st, I could write the following:</p>
 <ol class="simple">
 <li><p>Jan 1<br></p></li>
