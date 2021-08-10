@@ -7,7 +7,7 @@
   - file: 01_02_introduction_to_spacy
     title: Introduction to spaCy
   - file: 02_rules_based_ner
-    title: Rules Based NER with spaCy
+    title: Rules-Based NER
   - file: 03_machine_learning_ner
     title: Machine Learning NER with spaCy
 - part: Rules-Based NER in spaCy 3x
