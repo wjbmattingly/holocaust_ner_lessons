@@ -20,9 +20,9 @@
     title: How to Add Multi-Word Tokens to spaCy Entities
 - part: Machine Learning NER with spaCy 3x
   chapters:
-  -file: 03_01_create_ner_training_set
+  - file: 03_01_create_ner_training_set
     title: Creating a Training Set
-  -file: 03_02_train_spacy_ner_model
+  - file: 03_02_train_spacy_ner_model
     title: How to Train a Base NER ML Model
   - file: 03_03_examining_a_spacy_model
     title: Examining a spaCy Model in the Folder
