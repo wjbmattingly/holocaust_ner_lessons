@@ -1,6 +1,8 @@
-- file: intro
+format: jb-book
+root: intro
+parts:
+- caption: Key Concepts and Terms
   numbered: true
-- part: Key Concepts and Terms
   chapters:
   - file: 01_01_introduction_to_ner
     title: Introduction to Named Entity Recognition
@@ -10,15 +12,17 @@
     title: Rules-Based NER
   - file: 03_machine_learning_ner
     title: Machine Learning NER with spaCy
-- part: Rules-Based NER in spaCy 3x
+- caption: Rules-Based NER in spaCy 3x
+  numbered: true
   chapters:
   - file: 02_01_spaCy_Entity_Ruler
     title: Using SpaCy's EntityRuler
   - file: 02_02_intro_to_regex
     title: Introduction to RegEx in Python and spaCy
-  - file:  02_03_mwt_with_finditer
+  - file: 02_03_mwt_with_finditer
     title: How to Add Multi-Word Tokens to spaCy Entities
-- part: Machine Learning NER with spaCy 3x
+- caption: Machine Learning NER with spaCy 3x
+  numbered: true
   chapters:
   - file: 03_01_create_ner_training_set
     title: Creating a Training Set
@@ -32,10 +36,11 @@
     title: Generating Custom Word Vectors with Gensim
   - file: 03_06_loading_custom_word_vectors
     title: Loading Custom Word Vectors into a spaCy Model
-- part: Solving a Domain-Specific Problem (Holocaust)
+- caption: Solving a Domain-Specific Problem (Holocaust)
+  numbered: true
   chapters:
   - file: 04_01_cultivating_concentration_camp_dataset
-    title: Cultivating Good Datasets for Entities          
+    title: Cultivating Good Datasets for Entities
   - file: 04_02_cultivating_corpus.ipynb
     title: Cultivating a Corpus
   - file: 04_03_the_challenges_of_holocaust_ner
