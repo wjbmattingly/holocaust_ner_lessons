@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>holocaust_ner_lessons &#8212; Introduction to Named Entity Recognition</title>
     
-  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -54,14 +51,14 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -70,20 +67,20 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/data_science_lab_logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Introduction to Named Entity Recognition</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/data_science_lab_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Named Entity Recognition</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    <p align="center">
@@ -92,12 +89,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Key Concepts and Terms
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01_01_introduction_to_ner.html">
    1. Introduction to Named Entity Recognition
@@ -108,94 +105,95 @@
    2. Introduction to spaCy
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_rules_based_ner.html">
-   3. Rules-Based NER with spaCy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_machine_learning_ner.html">
-   4. Machine Learning NER with spaCy
-  </a>
- </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
-  The Basics of NER Training
+  Rules-Based NER in spaCy 3x
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="04_01_spaCy_Entity_Ruler.html">
-   1. Using SpaCy's EntityRuler
+  <a class="reference internal" href="02_01_spaCy_Entity_Ruler.html">
+   3. Using SpaCy's EntityRuler
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="04_02_create_ner_training_set.html">
-   2. Using EntityRuler to Create Training Set
+  <a class="reference internal" href="02_02_intro_to_regex.html">
+   4. Introduction to RegEx in Python and spaCy
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="04_03_train_spacy_ner_model.html">
-   3. How to Train spaCy NER Model
+  <a class="reference internal" href="02_03_mwt_with_finditer.html">
+   5. How to Add Multi-Word Tokens to spaCy Entities
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
-  Advanced NER Concepts
+  Machine Learning NER with spaCy 3x
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="05_examining_a_spacy_model.html">
-   1. Examining a spaCy Model in the Folder
+  <a class="reference internal" href="03_01_create_ner_training_set.html">
+   6. Creating a Training Set
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="06_introduction_to_word_vectors.html">
-   2. Introduction to Word Vectors
+  <a class="reference internal" href="03_02_train_spacy_ner_model.html">
+   7. How to Train a Base NER ML Model
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="07_generating_custom_word_vectors.html">
-   3. Generating Custom Word Vectors with Gensim
+  <a class="reference internal" href="03_03_examining_a_spacy_model.html">
+   8. Examining a spaCy Model in the Folder
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="08_loading_custom_word_vectors.html">
-   4. Loading Custom Word Vectors into a spaCy Model
+  <a class="reference internal" href="03_04_introduction_to_word_vectors.html">
+   9. Introduction to Word Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_05_generating_custom_word_vectors.html">
+   10. Generating Custom Word Vectors with Gensim
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_06_loading_custom_word_vectors.html">
+   11. Loading Custom Word Vectors into a spaCy Model
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Solving a Domain-Specific Problem (Holocaust)
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="09_01_cultivating_concentration_camp_dataset.html">
-   1. Cultivating Good Datasets for Entities
+  <a class="reference internal" href="04_01_cultivating_concentration_camp_dataset.html">
+   12. Cultivating Good Datasets for Entities
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="09_02_cultivating_corpus.html">
-   2. Cultivating a Corpus
+  <a class="reference internal" href="04_02_cultivating_corpus.html">
+   13. Cultivating a Corpus
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="10_the_challenges_of_holocaust_ner.html">
-   3. The Challenges of Holocaust NER
+  <a class="reference internal" href="04_03_the_challenges_of_holocaust_ner.html">
+   14. The Challenges of Holocaust NER
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="11_introduction_to_custom_pipes.html">
-   4. Introduction to Custom Pipes
+  <a class="reference internal" href="04_04_introduction_to_custom_pipes.html">
+   15. Introduction to Custom Pipes
   </a>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -211,21 +209,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -243,7 +241,7 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -263,20 +261,21 @@
     </div>
 </div>
 
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
-    </div>
+        </div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -315,13 +314,13 @@ In all, there will be somewhere between 20 and 30 notebooks when complete.</p>
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -329,7 +328,7 @@ In all, there will be somewhere between 20 and 30 notebooks when complete.</p>
         
           By William Mattingly<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -338,11 +337,9 @@ In all, there will be somewhere between 20 and 30 notebooks when complete.</p>
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>

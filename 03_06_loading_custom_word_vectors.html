@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>INTRODUCTION TO NAMED ENTITY RECOGNITION &#8212; Introduction to Named Entity Recognition</title>
+    <title>11. Loading Custom Word Vectors into a spaCy Model &#8212; Introduction to Named Entity Recognition</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,7 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Introduction to Named Entity Recognition" href="01_01_introduction_to_ner.html" />
+    <link rel="next" title="12. Cultivating Good Datasets for Entities" href="04_01_cultivating_concentration_camp_dataset.html" />
+    <link rel="prev" title="10. Generating Custom Word Vectors with Gensim" href="03_05_generating_custom_word_vectors.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -82,8 +83,8 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
    <p align="center">
     INTRODUCTION TO NAMED ENTITY RECOGNITION
    </p>
@@ -134,7 +135,7 @@
   Machine Learning NER with spaCy 3x
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="03_01_create_ner_training_set.html">
    6. Creating a Training Set
@@ -160,8 +161,8 @@
    10. Generating Custom Word Vectors with Gensim
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_06_loading_custom_word_vectors.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    11. Loading Custom Word Vectors into a spaCy Model
   </a>
  </li>
@@ -233,9 +234,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/03_06_loading_custom_word_vectors.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -253,10 +254,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/wjbmattingly/holocaust_ner_lessons/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/wjbmattingly/holocaust_ner_lessons/issues/new?title=Issue%20on%20page%20%2F03_06_loading_custom_word_vectors.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/wjbmattingly/holocaust_ner_lessons/edit/main/intro.md"><button
+        <a class="edit-button" href="https://github.com/wjbmattingly/holocaust_ner_lessons/edit/main/03_06_loading_custom_word_vectors.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -271,6 +272,23 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/wjbmattingly/holocaust_ner_lessons/main?urlpath=tree/03_06_loading_custom_word_vectors.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -282,41 +300,24 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#p-align-center-with-a-case-study-of-holocaust-ner-p">
-   <p align="center">
-    With a Case Study of Holocaust NER
-   </p>
+  <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
+   11.1. Key Concepts in this Notebook
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#p-align-center-dr-w-j-b-mattingly-p">
-     <p align="center">
-      Dr. W.J.B. Mattingly
-     </p>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#p-align-center-how-to-cite-p">
-     <p align="center">
-      How to Cite
-     </p>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#p-align-center-introduction-p">
-     <p align="center">
-      Introduction
-     </p>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#p-align-center-acknowledgments-p">
-     <p align="center">
-      Acknowledgments
-     </p>
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-word-vectors">
+   11.2. Loading Word Vectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   11.3. Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#video">
+   11.4. Video
+  </a>
  </li>
 </ul>
 
@@ -329,45 +330,78 @@
         
               <div>
                 
-  <div class="section" id="p-align-center-introduction-to-named-entity-recognition-p">
-<h1><p align="center">INTRODUCTION TO NAMED ENTITY RECOGNITION</p><a class="headerlink" href="#p-align-center-introduction-to-named-entity-recognition-p" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="p-align-center-with-a-case-study-of-holocaust-ner-p">
-<h2><p align="center">With a Case Study of Holocaust NER</p><a class="headerlink" href="#p-align-center-with-a-case-study-of-holocaust-ner-p" title="Permalink to this headline">¶</a></h2>
-<p align="center">by</p>
-<div class="section" id="p-align-center-dr-w-j-b-mattingly-p">
-<h3><p align="center">Dr. W.J.B. Mattingly</p><a class="headerlink" href="#p-align-center-dr-w-j-b-mattingly-p" title="Permalink to this headline">¶</a></h3>
-<p align="center">Postdoctoral Fellow at the Smithsonian Institution's Data Science Lab</p>
-<p align="center">and</p>
-<p align="center">United States Holocaust Memorial Museum</p>
+  <div class="section" id="center-loading-custom-word-vectors-into-a-spacy-model-center">
+<h1><span class="section-number">11. </span><center>Loading Custom Word Vectors into a spaCy Model</center><a class="headerlink" href="#center-loading-custom-word-vectors-into-a-spacy-model-center" title="Permalink to this headline">¶</a></h1>
+<center>Dr. W.J.B. Mattingly</center>
+<center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
+<center>January 2021</center><div class="section" id="key-concepts-in-this-notebook">
+<h2><span class="section-number">11.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>How to load word vectors into a spaCy model<br></p></li>
+</ol>
 </div>
-<div class="section" id="p-align-center-how-to-cite-p">
-<h3><p align="center">How to Cite</p><a class="headerlink" href="#p-align-center-how-to-cite-p" title="Permalink to this headline">¶</a></h3>
-<p>Mattingly, William. <i>Introduction to Named Entity Recognition</i>, 2020. <a href="ner.pythonhumanities.com" target="_blank">ner.pythonhumanities.com</a>.</p>
-<p align="center">
-<p><br><br><br><br></p>
+<div class="section" id="loading-word-vectors">
+<h2><span class="section-number">11.2. </span>Loading Word Vectors<a class="headerlink" href="#loading-word-vectors" title="Permalink to this headline">¶</a></h2>
+<p>This notebook will be short. It has one purpose, to provide the code necessary for loading word vectors into a blank spaCy model. We will use the word vectors we created in the last notebook: data/word_vecs.txt. There are two different ways to load word vectors into a spaCy model, either via command line (demonstrated in video) or via a Python script using subprocess and sys. I prefer the latter because I can automate the creation of blank spaCy models. I detail both of these methods in the video below. The code is explained in more depth in the video as well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_word_vectors</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">word_vectors</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">spacy</span>
+    <span class="kn">import</span> <span class="nn">subprocess</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span>
+                    <span class="s2">&quot;-m&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;spacy&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;init-model&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;en&quot;</span><span class="p">,</span>
+                    <span class="n">model_name</span><span class="p">,</span>
+                    <span class="s2">&quot;--vectors-loc&quot;</span><span class="p">,</span>
+                    <span class="n">word_vectors</span>
+                        <span class="p">]</span>
+                    <span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New spaCy model created with word vectors. File: </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">load_word_vectors</span><span class="p">(</span><span class="s2">&quot;data/sample_model&quot;</span><span class="p">,</span> <span class="s2">&quot;data/word_vecs.txt&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="p-align-center-introduction-p">
-<h3><p align="center">Introduction</p><a class="headerlink" href="#p-align-center-introduction-p" title="Permalink to this headline">¶</a></h3>
-<p>This series of notebooks is meant to function as a textbook for named entity recognition (NER), a task of natural language processing. The purpose of NER is to extract structured data from unstructured texts, namely specific entities, such as people, places, dates, etc. To date, there is not a freely available extensive treatment of the subject and methods of NER, from using off-the-shelf frameworks to creating custom domain-specific solutions. This notebook uses several different datasets to demonstrate the utility of and the methods for using NER. These notebooks are designed to be used alongside YouTube videos, which are embedded in the relevant sections. The complete playlist can be found here: <a href="https://www.youtube.com/playlist?list=PL2VXyKi-KpYs1bSnT8bfMFyGS-wMcjesM" target="_blank">Introduction to NER</a>. If you find typos or errors in these notebooks, please do not hesitate to contact me either via <a href="https://twitter.com/wjb_mattingly" target="_blank">Twitter</a> or here on GitHub.</p>
-<p><br><br><br><br></p>
 </div>
-<div class="section" id="p-align-center-acknowledgments-p">
-<h3><p align="center">Acknowledgments</p><a class="headerlink" href="#p-align-center-acknowledgments-p" title="Permalink to this headline">¶</a></h3>
-<p>This NER Textbook was created during my postdoctoral fellowship at the Smithsonian Institution’s Data Science Lab with collaboration at the United States Holocaust Memorial Museum. It would not have been possible without the help of Rebecca Dikow, Mike Trizna, and those in the Data Science Lab who listened to, aided, and advised me while creating these notebooks. I would also like to thank the content experts at the USHMM, specifically Michael Haley Goldman, Michael Levy, and Robert Ehrenreich.</p>
-<p align="center">
-<a class="reference external image-reference" href="https://datascience.si.edu/"><img alt="dsl" class="bg-primary align-center" src="_images/data_science_lab_logo.png" style="width: 200px;" /></a>
-<a class="reference external image-reference" href="https://si.edu/"><img alt="si" class="bg-primary align-center" src="_images/si_logo.jpg" style="width: 200px;" /></a>
-<a class="reference external image-reference" href="https://www.ushmm.org/"><img alt="ushmm" class="bg-primary align-center" src="_images/ushmm_logo.jpg" style="width: 200px;" /></a>
-</p>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New spaCy model created with word vectors. File: data/sample_model
+</pre></div>
 </div>
 </div>
-<div class="toctree-wrapper compound">
 </div>
-<div class="toctree-wrapper compound">
+<p>You will now be able to call the blank spaCy model, like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spacy</span>
+
+<span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;data/sample_model&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
 </div>
-<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="exercise">
+<h2><span class="section-number">11.3. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h2>
+<p>Try to load the custom word vectors you created from the exercise in the last notebook into a blank spaCy model.</p>
+</div>
+<div class="section" id="video">
+<h2><span class="section-number">11.4. </span>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">align</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;560&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;315&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.youtube.com/embed/aQPMWS6XiI8&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">allow</span><span class="o">=</span><span class="s">&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot;</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aQPMWS6XiI8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div></div>
+</div>
 </div>
 </div>
 
@@ -396,7 +430,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="01_01_introduction_to_ner.html" title="next page"><span class="section-number">1. </span><center>Introduction to Named Entity Recognition</center></a>
+    <a class='left-prev' id="prev-link" href="03_05_generating_custom_word_vectors.html" title="previous page"><span class="section-number">10. </span><center>Generating Custom Word Vectors with Gensim</center></a>
+    <a class='right-next' id="next-link" href="04_01_cultivating_concentration_camp_dataset.html" title="next page"><span class="section-number">12. </span><center>Cultivating Good Datasets for Entities</center></a>
 
         </div>
         

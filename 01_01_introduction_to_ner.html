@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1. Introduction to Named Entity Recognition &#8212; Introduction to Named Entity Recognition</title>
     
-  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -56,14 +53,14 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="2. Introduction to spaCy" href="01_02_introduction_to_spacy.html" />
     <link rel="prev" title="INTRODUCTION TO NAMED ENTITY RECOGNITION" href="intro.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -72,20 +69,20 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/data_science_lab_logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Introduction to Named Entity Recognition</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/data_science_lab_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Named Entity Recognition</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    <p align="center">
@@ -94,12 +91,12 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Key Concepts and Terms
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    1. Introduction to Named Entity Recognition
@@ -110,94 +107,95 @@
    2. Introduction to spaCy
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_rules_based_ner.html">
-   3. Rules-Based NER with spaCy
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_machine_learning_ner.html">
-   4. Machine Learning NER with spaCy
-  </a>
- </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
-  The Basics of NER Training
+  Rules-Based NER in spaCy 3x
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="04_01_spaCy_Entity_Ruler.html">
-   1. Using SpaCy's EntityRuler
+  <a class="reference internal" href="02_01_spaCy_Entity_Ruler.html">
+   3. Using SpaCy's EntityRuler
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="04_02_create_ner_training_set.html">
-   2. Using EntityRuler to Create Training Set
+  <a class="reference internal" href="02_02_intro_to_regex.html">
+   4. Introduction to RegEx in Python and spaCy
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="04_03_train_spacy_ner_model.html">
-   3. How to Train spaCy NER Model
+  <a class="reference internal" href="02_03_mwt_with_finditer.html">
+   5. How to Add Multi-Word Tokens to spaCy Entities
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
-  Advanced NER Concepts
+  Machine Learning NER with spaCy 3x
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="05_examining_a_spacy_model.html">
-   1. Examining a spaCy Model in the Folder
+  <a class="reference internal" href="03_01_create_ner_training_set.html">
+   6. Creating a Training Set
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="06_introduction_to_word_vectors.html">
-   2. Introduction to Word Vectors
+  <a class="reference internal" href="03_02_train_spacy_ner_model.html">
+   7. How to Train a Base NER ML Model
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="07_generating_custom_word_vectors.html">
-   3. Generating Custom Word Vectors with Gensim
+  <a class="reference internal" href="03_03_examining_a_spacy_model.html">
+   8. Examining a spaCy Model in the Folder
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="08_loading_custom_word_vectors.html">
-   4. Loading Custom Word Vectors into a spaCy Model
+  <a class="reference internal" href="03_04_introduction_to_word_vectors.html">
+   9. Introduction to Word Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_05_generating_custom_word_vectors.html">
+   10. Generating Custom Word Vectors with Gensim
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_06_loading_custom_word_vectors.html">
+   11. Loading Custom Word Vectors into a spaCy Model
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Solving a Domain-Specific Problem (Holocaust)
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="09_01_cultivating_concentration_camp_dataset.html">
-   1. Cultivating Good Datasets for Entities
+  <a class="reference internal" href="04_01_cultivating_concentration_camp_dataset.html">
+   12. Cultivating Good Datasets for Entities
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="09_02_cultivating_corpus.html">
-   2. Cultivating a Corpus
+  <a class="reference internal" href="04_02_cultivating_corpus.html">
+   13. Cultivating a Corpus
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="10_the_challenges_of_holocaust_ner.html">
-   3. The Challenges of Holocaust NER
+  <a class="reference internal" href="04_03_the_challenges_of_holocaust_ner.html">
+   14. The Challenges of Holocaust NER
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="11_introduction_to_custom_pipes.html">
-   4. Introduction to Custom Pipes
+  <a class="reference internal" href="04_04_introduction_to_custom_pipes.html">
+   15. Introduction to Custom Pipes
   </a>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -213,21 +211,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -245,7 +243,7 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -265,14 +263,14 @@
     </div>
 </div>
 
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -291,16 +289,16 @@
     </div>
 </div>
 
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction-to-this-series-of-notebooks">
    1.1. Introduction to this Series of Notebooks
@@ -328,8 +326,8 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -368,7 +366,7 @@
 </div>
 <div class="section" id="what-is-natural-language-processing">
 <h2><span class="section-number">1.3. </span>What is Natural Language Processing?<a class="headerlink" href="#what-is-natural-language-processing" title="Permalink to this headline">¶</a></h2>
-<p>Named entity recognition (addressed below) is a branch of <strong>natural language processing</strong>, better known as <strong>NLP</strong>. NLP is the process by which a researcher uses a computer system to parse human language and extract important metadata from texts. The purpose of NLP is to perform, among other things, <strong>distant reding</strong>.</p>
+<p>Named entity recognition (addressed below) is a branch of <strong>natural language processing</strong>, better known as <strong>NLP</strong>. NLP is the process by which a researcher uses a computer system to parse human language and extract important metadata from texts. The purpose of NLP is to perform, among other things, <strong>distant reading</strong>.</p>
 <p>Distant reading has a long history extending to the late-twentieth century. It is commonly used when the quantity of texts in a given corpus prevent a researcher (or a team of researchers) from reading the corpus <em>closely</em> in its entirety. In order to make sense of that large corpus, the researcher will often pass certain tasks to a computer with the understanding that there is a margin of error. This margin of error is accepted in exchange for the ability to gain a larger, <em>distant</em> understanding of that corpus. Distant reading is used to perform several significant tasks, such as:</p>
 <ol class="simple">
 <li><p><strong>sentiment analysis</strong>=&gt; understanding the sentiment of a text<br></p></li>
@@ -376,21 +374,20 @@
 <li><p><strong>named entity recognition</strong>=&gt; extract entities from a text<br></p></li>
 </ol>
 <p>The metadata from these tasks can then be used to get a sense of the texts without reading them closely, hence the term <em>distant reading</em>.</p>
-<p>NLP works in tandem with two other similar branches of computational linguistics, <strong>natural language understanding</strong>, or <strong>NLU</strong>, and <strong>automatic speech recognition</strong>, or <strong>ASR</strong>. To get a better understanding of how these fields relate to one another, please see the image below.</p>
-<img alt="https://cdn-images-1.medium.com/max/1000/1*Uf_qQ0zF8G8y9zUhndA08w.png" src="https://cdn-images-1.medium.com/max/1000/1*Uf_qQ0zF8G8y9zUhndA08w.png" />
-<p>This image is commonly shared across various NLP tutorials and for good reason. It accuarately portrays the diverse field of NLP and its close partner fields of NLU and ASR. The goal of NLP is to feed a text to a computer system and have it return some sort of output. This is often achieved through a series of <strong>pipelines</strong> that perform some opperations on the data at hand.</p>
-<p>Earlier pipelines, may includer a tokenizer, whose sole job is to break a text into individual tokens. <strong>Tokens</strong> are items in a text that have some linguistic meaning. They can be words, such as “Martha”, but they can also be punctuation marks, such as “,” in the relative clause “, a senior,”. Likewise, “‘nt” in the contraction “can’t” would also be recognized as a token since “‘nt” in English corresponds to the word “not”.</p>
-<p>A common pipeline after a tokenizer is a POS tagger whose job is to identify the parts-of-speech, or POS, in the text. This is essential for the computer to understand how individual tokens are functioning in a sentence. The way in which we perform POS on different langauges is not the same. In inflected langauges, such as German, or highly inflected languages, such as Latin or Ancient Greek, the ending of the word contains a lot of information about it’s role in the sentence, i.e. a nominative singular or dative plural. In low inflected languages, such as English, position in the sentence holds primacy. English is a Noun-Verb-Object langauge (NVO). Let us consider an example sentence:</p>
+<p>NLP works in tandem with two other similar branches of computational linguistics, <strong>natural language understanding</strong>, or <strong>NLU</strong>, and <strong>automatic speech recognition</strong>, or <strong>ASR</strong>. To get a better understanding of how the fields of NLP and NLU relate to one another, please see the image below.</p>
+<img src="images/Where is NER in NLU vs. NLP.png" width=800/><p>This image is an alteration of one that is commonly shared across various NLP tutorials and for good reason. It accurately portrays the diverse field of NLP and its close partner fields of NLU and ASR. The goal of NLP is to feed a text to a computer system and have it return some sort of output. This is often achieved through a series of <strong>pipelines</strong> that perform some operations on the data at hand.</p>
+<p>Earlier pipelines, may include a tokenizer, whose sole job is to break a text into individual tokens. <strong>Tokens</strong> are items in a text that have some linguistic meaning. They can be words, such as “Martha”, but they can also be punctuation marks, such as “,” in the relative clause “, a senior,”. Likewise, “‘nt” in the contraction “can’t” would also be recognized as a token since “‘nt” in English corresponds to the word “not”.</p>
+<p>A common pipeline after a tokenizer is a POS tagger whose job is to identify the parts-of-speech, or POS, in the text. This is essential for the computer to understand how individual tokens are functioning in a sentence. The way in which we perform POS on different languages is not the same. In inflected languages, such as German, or highly inflected languages, such as Latin or Ancient Greek, the ending of the word contains a lot of information about it’s role in the sentence, i.e. a nominative singular or dative plural. In low inflected languages, such as English, position in the sentence holds primacy. English is a Noun-Verb-Object language (NVO). Let us consider an example sentence:</p>
 <p><em>The boy took the ball to the store</em>.</p>
 <p>The nominative (subject), “boy”, comes first in the sentence, followed by the verb, “took”, then followed by the accusative (object), “ball”, and finally the dative (indirect object), “store”. The words “the” and “to” also contain vital information. “The” occurs twice and tells the reader that it’s not just any ball, it’s <em>the</em> ball; likewise, it’s not just a store, but <em>the</em> store. The period too tells us something important. This is a statement, not a question. For native speakers of a given language these parts-of-speech may go entirely unnoticed. We understand them intuitively. Some of us may have memories of memorizing parsing trees in 5th grade grammar, but for the most part we developed mentally and linguistically with our mother tongue in a unique way. We can use that language without thought of grammar. For those who have devoted time to learning a second language later in life, grammar is a necessity (and sometimes a bane) to learn. We do not learn languages later in life the same way we learn our mother tongue. For a computer, the same holds true. We need to allow the computer to understand parts of speech.</p>
 <p>Named entity recognition will often times come later in a pipeline because it needs to receive a tokenized text and, in some languages, it needs to understand a words POS to perform well. As a text moves through the pipeline, it receives <strong>spans</strong> that contain valuable information, such as part of speech. Once the text reaches the NER pipeline, it is time for the machine to make some structured decisions about individual tokens.</p>
 </div>
 <div class="section" id="what-is-named-entity-recognition">
 <h2><span class="section-number">1.4. </span>What is Named Entity Recognition?<a class="headerlink" href="#what-is-named-entity-recognition" title="Permalink to this headline">¶</a></h2>
-<p><strong>Entities</strong> are words in a text that correspond to a specific type of data. They can be <em>numerical</em>, such as cardinal numbers; <em>temporal</em>, such as dates; <em>nominal</em>, such as names of people and places; and <em>political</em>, such as geopolitical entities (GPE). In short, an entity can be anything the designer whishes to designate as an item in a text that has a corresponding label.</p>
+<p><strong>Entities</strong> are words in a text that correspond to a specific type of data. They can be <em>numerical</em>, such as cardinal numbers; <em>temporal</em>, such as dates; <em>nominal</em>, such as names of people and places; and <em>political</em>, such as geopolitical entities (GPE). In short, an entity can be anything the designer wishes to designate as an item in a text that has a corresponding label.</p>
 <p>Named entity recognition, or <strong>NER</strong>, is the process by which a system takes an input of unstructured data (a text) and outputs structured data, specifically the identification of entities. Let us consider this short example.</p>
 <p><em>Martha, a senior, moved to Spain where she will be playing basketball until 05 June 2022 or until she can’t play any longer.</em></p>
-<p>In this example, we have several potential entities. First, there is “Martha”. Different NER models will have different coresponding labels for such an entity, but PERSON or PER is considered standard practice. Note here that the label is capitalized. This is also standard practice. We also have a GPE, or Geopolitical Entity, notably “Spain”. Finally, we have a DATE entity, “05 June 2022”. These are standard labels that one can expect to extract from a text. If the domain at hand, however, has additional labels, those can be extracted as well. Perhaps the client or user wants to not only extract people, GPEs, and dates, but also sports. In such a scenario “basketball” could be extracted and given the label SPORT.</p>
+<p>In this example, we have several potential entities. First, there is “Martha”. Different NER models will have different corresponding labels for such an entity, but PERSON or PER is considered standard practice. Note here that the label is capitalized. This is also standard practice. We also have a GPE, or Geopolitical Entity, notably “Spain”. Finally, we have a DATE entity, “05 June 2022”. These are standard labels that one can expect to extract from a text. If the domain at hand, however, has additional labels, those can be extracted as well. Perhaps the client or user wants to not only extract people, GPEs, and dates, but also sports. In such a scenario “basketball” could be extracted and given the label SPORT.</p>
 <p>Not all entities are singular. As is common with texts, sometimes entities are <strong>Multi-word Tokens</strong>, or <strong>MWT</strong>. Let us consider the same sentence as above, but with one modification:</p>
 <p><em>Martha <strong>Thompson</strong>, a senior, moved to Spain where she will be playing basketball until 05 June 2022 or until she can’t play any longer.</em></p>
 <p>Here, Martha now has a surname, “Thompson”. We can either extract Martha and Thompson as individual entities or, as is more common practice, extract both as a single entity, since “Martha Thompson” is a single individual. An NER system, therefore, should recognize “Martha Thompson” as a single, MWT.</p>
@@ -439,15 +436,15 @@
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="intro.html" title="previous page"><p align="center">INTRODUCTION TO NAMED ENTITY RECOGNITION</p></a>
     <a class='right-next' id="next-link" href="01_02_introduction_to_spacy.html" title="next page"><span class="section-number">2. </span><center>Introduction to spaCy</center></a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -455,7 +452,7 @@
         
           By William Mattingly<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -464,11 +461,9 @@
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>
