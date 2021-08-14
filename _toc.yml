@@ -47,3 +47,5 @@ parts:
     title: The Challenges of Holocaust NER
   - file: 04_04_introduction_to_custom_pipes
     title: Introduction to Custom Pipes
+  - file: 04_05_building_holocaust_pipeline_rules_based
+    title: Creating the Rules-Based Pipeline
