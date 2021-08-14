@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Creating Rules-Based Pipeline for Holocaust Documents &#8212; Introduction to Named Entity Recognition</title>
+    <title>16. Creating Rules-Based Pipeline for Holocaust Documents &#8212; Introduction to Named Entity Recognition</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,6 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="15. Creating Location Pipe for Holocaust NER" href="04_04_introduction_to_custom_pipes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -170,7 +171,7 @@
   Solving a Domain-Specific Problem (Holocaust)
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="04_01_cultivating_concentration_camp_dataset.html">
    12. Cultivating Good Datasets for Entities
@@ -189,6 +190,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="04_04_introduction_to_custom_pipes.html">
    15. Introduction to Custom Pipes
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   16. Creating the Rules-Based Pipeline
   </a>
  </li>
 </ul>
@@ -299,67 +305,67 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#key-concepts-in-this-notebook">
-   Key Concepts in this Notebook
+   16.1. Key Concepts in this Notebook
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#introduction">
-   Introduction
+   16.2. Introduction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-blank-spacy-model">
-   Creating a Blank spaCy Model
+   16.3. Creating a Blank spaCy Model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-pipe-for-finding-ships">
-   Creating a Pipe for Finding Ships
+   16.4. Creating a Pipe for Finding Ships
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-pipe-for-finding-ghettos">
-   Creating a Pipe for Finding Ghettos
+   16.5. Creating a Pipe for Finding Ghettos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-pipe-for-identifying-a-person">
-   Create Pipe for Identifying a Person
+   16.6. Create Pipe for Identifying a Person
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-pipe-for-identifying-spouses">
-   Create Pipe for Identifying Spouses
+   16.7. Create Pipe for Identifying Spouses
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-concentration-camp-pipe">
-   Creating Concentration Camp Pipe
+   16.8. Creating Concentration Camp Pipe
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-revolutionary-groups-pipe">
-   Creating Revolutionary Groups Pipe
+   16.9. Creating Revolutionary Groups Pipe
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-places-pipe">
-   Creating a Places Pipe
+   16.10. Creating a Places Pipe
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-geography-pipe">
-   Creating a Geography Pipe
+   16.11. Creating a Geography Pipe
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#seeing-the-pipes-at-work">
-   Seeing the Pipes at Work
+   16.12. Seeing the Pipes at Work
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#saving-a-spacy-model">
-   Saving a spaCy Model
+   16.13. Saving a spaCy Model
   </a>
  </li>
 </ul>
@@ -374,11 +380,11 @@
               <div>
                 
   <div class="section" id="center-creating-rules-based-pipeline-for-holocaust-documents-center">
-<h1><center>Creating Rules-Based Pipeline for Holocaust Documents</center><a class="headerlink" href="#center-creating-rules-based-pipeline-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">16. </span><center>Creating Rules-Based Pipeline for Holocaust Documents</center><a class="headerlink" href="#center-creating-rules-based-pipeline-for-holocaust-documents-center" title="Permalink to this headline">¶</a></h1>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>January 2021</center><div class="section" id="key-concepts-in-this-notebook">
-<h2>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.1. </span>Key Concepts in this Notebook<a class="headerlink" href="#key-concepts-in-this-notebook" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>How to add pipes to a spaCy model<br></p></li>
 <li><p>How to Consider Rules<br></p></li>
@@ -386,12 +392,12 @@
 </ol>
 </div>
 <div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>In this notebook, we will walk through some of the heuristic pipes I developed or am developing for my Holocaust NER spaCy pipeline. The purpose of these heuristic pipes is not to catch all potential entities, but to return with a high degree of confidence only true positives. We accept that the heuristics won’t catch everything because the final item in this long pipeline is a machine learning NER model that will generalize, or make predictions, on the unseen data. By structuring many heuristics in the pipeline, we can radically reduce the chances of our ML model making a wrong prediction because the all known true positives will have already been annotated.</p>
 <p>I should also note that the code in my pipes is repetitious by design. As this is a textbook, it would be difficult for the reader to consistently look at the top of the notebook to identify the variable set 20 cells earlier. For this reason, I opt to recreate the variables later in the notebook. While this is bad practice, it allows the reader to understand better what is happening at any given moment in the notebook.</p>
 </div>
 <div class="section" id="creating-a-blank-spacy-model">
-<h2>Creating a Blank spaCy Model<a class="headerlink" href="#creating-a-blank-spacy-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.3. </span>Creating a Blank spaCy Model<a class="headerlink" href="#creating-a-blank-spacy-model" title="Permalink to this headline">¶</a></h2>
 <p>The first thing we need to do is import all of the different components from spaCy and other libraries that we will need. I will explain these as we go forward.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -425,7 +431,7 @@ INFO:tensorflow:Enabling control flow v2
 </div>
 </div>
 <div class="section" id="creating-a-pipe-for-finding-ships">
-<h2>Creating a Pipe for Finding Ships<a class="headerlink" href="#creating-a-pipe-for-finding-ships" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.4. </span>Creating a Pipe for Finding Ships<a class="headerlink" href="#creating-a-pipe-for-finding-ships" title="Permalink to this headline">¶</a></h2>
 <p>The very first pipe I want to create is a pipe that can find ships, specifically transport ships. In order to achieve this objective, this pipe does several things at once. First, it leverages RegEx to find known patterns that are always ships, e.g. multi-word tokens that may or may not begin with “S.S.”, “SS”, or “The”, followed by a list of known ships. I have opted to not use a spaCy EntityRuler here primarily because I want to expand this pipe in the future and it allows me to find matches that are more varied. Were I to implement this in an EntityRuler pipe, I would need to have many patterns sit in its knowledge-base.</p>
 <p>But finding one of these patterns isn’t enough. I want to ensure that the thing referenced is in fact a ship. Many of these terms could easily be toponyms, or entities that share the same spelling but mean different things in different contexts, e.g. the Ile de France, could easily be a GPE that refers to the area around Paris. General Hosey could easily be a PERSON. To ensure toponym disambiguation, I set up several contextual clues, e.g. the list of nautical terms. If any of these words appear in area around the hit, then the heuristics assign that token the label of SHIP. If not, it ignores it and allows later pipes or the machine learning model to annotate it.</p>
 <div class="cell docutils container">
@@ -539,7 +545,7 @@ data/new_ocr\RG-50.030.0038_trs_en.txt
 <p>Success! File, data/new_ocr\RG-50.030.0006_trs_en.txt, referenced two ships, the Cap Arcona and the St. Louis. Now that we know we can capture ships in this manner, let’s try out the same principle on ghettos.</p>
 </div>
 <div class="section" id="creating-a-pipe-for-finding-ghettos">
-<h2>Creating a Pipe for Finding Ghettos<a class="headerlink" href="#creating-a-pipe-for-finding-ghettos" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.5. </span>Creating a Pipe for Finding Ghettos<a class="headerlink" href="#creating-a-pipe-for-finding-ghettos" title="Permalink to this headline">¶</a></h2>
 <p>As of the time of pushing this notebook, August 13, 2021, I have yet to receive a comprehensive dataset of ghettos. In the near future, this pipe will be vastly improved, similar to the concentration camp pipe below. For now, this pipe functions precisely the same way our earlier ship pipe function. Here, we’re looking for the use of the word ghetto around one of these known cities that had ghettos. This is absolutely necessary because any of these cities could be a GPE in general. The use of the word ghetto within a small contextual window is a good heuristic for assigning this city the label of GHETTO over GPE.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -624,7 +630,7 @@ data/new_ocr\RG-50.030.0006_trs_en.txt
 <p>As we can see, the pipe is working. We’ve grabbed three instances of Warsaw in data/new_ocr\RG-50.030.0001_trs_en.txt.</p>
 </div>
 <div class="section" id="create-pipe-for-identifying-a-person">
-<h2>Create Pipe for Identifying a Person<a class="headerlink" href="#create-pipe-for-identifying-a-person" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.6. </span>Create Pipe for Identifying a Person<a class="headerlink" href="#create-pipe-for-identifying-a-person" title="Permalink to this headline">¶</a></h2>
 <p>For PERSON, we will be leveraging spaCy’s small model, but we can add some heuristics that will greatly improve the results. The heuristics here is any known salutation capitalized followed by a series of proper nouns. This RegEx “(?:[A-Z]\w+[ -]?)+)” allows us to grab all continuous capital words and then break when it encounters a non capital letter followed by a space. In English, these will always be PERSON entities.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -670,7 +676,7 @@ data/new_ocr\RG-50.030.0006_trs_en.txt
 </div>
 </div>
 <div class="section" id="create-pipe-for-identifying-spouses">
-<h2>Create Pipe for Identifying Spouses<a class="headerlink" href="#create-pipe-for-identifying-spouses" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.7. </span>Create Pipe for Identifying Spouses<a class="headerlink" href="#create-pipe-for-identifying-spouses" title="Permalink to this headline">¶</a></h2>
 <p>Often times in historical documents the identity of people are referenced collectively. In some instances, such as those of spouses, this results in the name of the woman being attached to the name of her husband. The purpose of this SPOUSAL entity is to identify such constructs so that users can manipulate the output and reconstruct each individual singularly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -714,7 +720,7 @@ data/new_ocr\RG-50.030.0006_trs_en.txt
 </div>
 </div>
 <div class="section" id="creating-concentration-camp-pipe">
-<h2>Creating Concentration Camp Pipe<a class="headerlink" href="#creating-concentration-camp-pipe" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.8. </span>Creating Concentration Camp Pipe<a class="headerlink" href="#creating-concentration-camp-pipe" title="Permalink to this headline">¶</a></h2>
 <p>The correct identification of camp is one of the most important pipes in this pipeline. There are two concentration camp pipes. The first pipe looks at all known camps and subcamps and then looks for surrounding words to identify the context. The second pipe is less strict. It looks for all known main concentration camps without context. The reason for this is because sometimes the subcamps have the same names as frequently cited cities, e.g. Berlin or Neustadt. This is particularly true of the subcamps. The main camps, however, are frequently referenced to the camp itself. Both pipes are activated by default, but a user can deactivate one or other.</p>
 <p>Throughout this pipe, you will see many functions that contain the name “getter”. These are custom functions that allow us to add special attributes to our entity spans. If you scroll down to the bottom of this section, you will see that we can use the HGC dataset for conentration camps to retrieve other salient information, such as the subcamp’s main camp, its longitude and latitude, opening date, closing date, etc.</p>
 <div class="cell docutils container">
@@ -1078,7 +1084,7 @@ hey did it deliberately and gradually. One step at a time, one humiliation. The 
 </div>
 </div>
 <div class="section" id="creating-revolutionary-groups-pipe">
-<h2>Creating Revolutionary Groups Pipe<a class="headerlink" href="#creating-revolutionary-groups-pipe" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.9. </span>Creating Revolutionary Groups Pipe<a class="headerlink" href="#creating-revolutionary-groups-pipe" title="Permalink to this headline">¶</a></h2>
 <p>The purpose of this pipe is to find known Revolutionary Groups. Again, this pipe is not an EntityRuler because I intend to do a few extra things with it in the future beyond the limitations of the EntityRuler.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1118,7 +1124,7 @@ hey did it deliberately and gradually. One step at a time, one humiliation. The 
 </div>
 </div>
 <div class="section" id="creating-a-places-pipe">
-<h2>Creating a Places Pipe<a class="headerlink" href="#creating-a-places-pipe" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.10. </span>Creating a Places Pipe<a class="headerlink" href="#creating-a-places-pipe" title="Permalink to this headline">¶</a></h2>
 <p>The ML model will capture place fairly well. Nevertheless, if you can write a simple rule, write a simple rule.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1178,7 +1184,7 @@ hey did it deliberately and gradually. One step at a time, one humiliation. The 
 </div>
 </div>
 <div class="section" id="creating-a-geography-pipe">
-<h2>Creating a Geography Pipe<a class="headerlink" href="#creating-a-geography-pipe" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.11. </span>Creating a Geography Pipe<a class="headerlink" href="#creating-a-geography-pipe" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">general_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;([A-Z]\w+) (River|Mountain|Mountains|Forest|Forests|Sea|Ocean)*&quot;</span>
@@ -1232,7 +1238,7 @@ hey did it deliberately and gradually. One step at a time, one humiliation. The 
 </div>
 </div>
 <div class="section" id="seeing-the-pipes-at-work">
-<h2>Seeing the Pipes at Work<a class="headerlink" href="#seeing-the-pipes-at-work" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.12. </span>Seeing the Pipes at Work<a class="headerlink" href="#seeing-the-pipes-at-work" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have assembled all these pipes into a pipeline, let’s see how they perform on a real testimony.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1529,7 +1535,7 @@ hey did it deliberately and gradually. One step at a time, one humiliation. The 
 <p>This result is not perfect, but again, that’s not the point here. Here we are less interested in catching all entities as much as not catching any false positives. At a quick glance, we have achieved that. Now that were are tentatively happy, wan save our pipeline to disk, but first, let’s add some metadata.</p>
 </div>
 <div class="section" id="saving-a-spacy-model">
-<h2>Saving a spaCy Model<a class="headerlink" href="#saving-a-spacy-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.13. </span>Saving a spaCy Model<a class="headerlink" href="#saving-a-spacy-model" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">meta</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;ushmm_rules&quot;</span>
@@ -1579,6 +1585,7 @@ hey did it deliberately and gradually. One step at a time, one humiliation. The 
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="04_04_introduction_to_custom_pipes.html" title="previous page"><span class="section-number">15. </span><center>Creating Location Pipe for Holocaust NER</center></a>
 
         </div>
         
