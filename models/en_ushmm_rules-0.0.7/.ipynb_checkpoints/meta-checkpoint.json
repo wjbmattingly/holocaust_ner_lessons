@@ -1,0 +1,69 @@
+{
+  "lang":"en",
+  "name":"ushmm_rules",
+  "version":"0.0.7",
+  "description":"This is a pipeline of heuristics to help identify essential entities for research into the Holocaust.",
+  "author":"W.J.B. Mattingly",
+  "email":"",
+  "url":"www.wjbmattingly.com",
+  "license":"",
+  "spacy_version":">=3.1.1,<3.2.0",
+  "spacy_git_version":"ffaead8fe",
+  "vectors":{
+    "width":0,
+    "vectors":0,
+    "keys":0,
+    "name":null
+  },
+  "labels":{
+    "ner":[
+      "CARDINAL",
+      "DATE",
+      "EVENT",
+      "FAC",
+      "GPE",
+      "LANGUAGE",
+      "LAW",
+      "LOC",
+      "MONEY",
+      "NORP",
+      "ORDINAL",
+      "ORG",
+      "PERCENT",
+      "PERSON",
+      "PRODUCT",
+      "QUANTITY",
+      "TIME",
+      "WORK_OF_ART"
+    ]
+  },
+  "pipeline":[
+    "find_ships",
+    "find_ghettos",
+    "find_people",
+    "find_spousal",
+    "find_camps_strict",
+    "find_groups",
+    "find_places",
+    "find_geography",
+    "ner"
+  ],
+  "components":[
+    "find_ships",
+    "find_ghettos",
+    "find_people",
+    "find_spousal",
+    "find_camps_strict",
+    "find_groups",
+    "find_places",
+    "find_geography",
+    "ner"
+  ],
+  "disabled":[
+
+  ],
+  "_sourced_vectors_hashes":{
+
+  },
+  "author_email":"wjbmattingly@gmail.com"
+}

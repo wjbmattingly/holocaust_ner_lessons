@@ -1,0 +1,3 @@
+[spacy_models]
+en_ushmm_rules = en_ushmm_rules
+

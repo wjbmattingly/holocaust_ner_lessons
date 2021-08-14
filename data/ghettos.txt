@@ -1,0 +1,570 @@
+Anykščiai	1
+Arad	6
+Ashmiany	3
+Babruĭsk	8
+Balassagyarmat	4
+Baranavichy	9
+Barysaŭ	2
+Będzin	223
+Bełżyce	6
+Berdychiv	3
+Berehove	12
+Berestechko	3
+Berezdiv	1
+Berezhany	4
+Berezne	2
+Bershad'	13
+Biała Podlaska	12
+Biała Rawska	29
+Białystok	55
+Biaroza	3
+Bibrka	6
+Bielsko-Biała	8
+Biržai	1
+Bitola	1,143
+Blazhiv	1
+Bobowa	3
+Bochnia	22
+Bolekhiv	7
+Borshchuv	1
+Boryslav	25
+Boskovice	2
+Brańsk	3
+Bratslav	4
+Brody	16
+Brzesko	2
+Buczacz	6
+Budapest	474
+Bus'k	1
+Bychawa	1
+Chashniki	1
+Chrzanów	18
+Ciechanów	17
+Cieszanów	3
+Cristuru Secuiesc	1
+Czernowitz	62
+Częstochowa	117
+Czortków	9
+Dąbrowa Górnicza	171
+Dąbrowa Tarnowska	2
+Damashėvichy	1
+Daugavpils	14
+Dokshytsy	7
+Dombóvár	2
+Dombrowa	195
+Drohobycz	4
+Drzewica	1
+Dubrovytsia	4
+Dzialoszyce	5
+Dziarechyn	3
+Dziatlava	18
+Glebokie	2
+Gol'shany	1
+Góra Kalwaria	4
+Gorodnaia	1
+Gostynin	3
+Gyöngyös	1
+Hajdúszoboszló	1
+Halushchyntsi	1
+Halych	1
+Hantsavichy	2
+Haradnaia	2
+Hatvan	3
+Hlusk	1
+Hlyniany	1
+Homel'	3
+Horodenka	5
+Horokhiv	5
+Hradzianka	2
+Hrodna	21
+Hvizdets'	1
+Iaktoriv	4
+Izbica Lubelska	10
+Józefów	2
+Kalisz	21
+Kałuszyn	5
+Kam'iane Pole	1
+Kamin'-Kashyrs'kyĭ	2
+Katowice	33
+Kecskemét	2
+Kelme	1
+Kharkiv	13
+Khmel'nyts'ka oblast'	4
+Khmel'nyts'kyĭ	6
+Khust	13
+Kielce	171
+Kisvárda	7
+Kletsk	4
+Kobryn	2
+Kolbuszowa	79
+Kolozsvár	19
+Komarów-Osada	1
+Kopychyntsi	2
+Korets'	3
+Košice	25
+Kőszeg	129
+Kovel'	7
+Kozienice	63
+Kraków	373
+Kraśnik	3
+Kretinga	1
+Krośniewice	2
+Krymne	2
+Kryzhopil'	1
+Kul'chyny	1
+Kunhegyes	1
+Kutno	18
+Kysylyn	3
+Ladyzhyn	2
+Lakhva	13
+Lask	5
+Lęczyca	5
+Lesko	3
+Lida	8
+Liepāja	12
+Lipinki	1
+Lithakia	1
+Litin	2
+Litzmannstadt	1,563
+Liubavichi	4
+Łomża	8
+Lubaczów	4
+Lubartów	3
+Lublin	118
+Łuck	6
+Lwów	181
+Lyubcha	1
+Mahiliou	7
+Maków Mazowiecki	4
+Marcinkonys	1
+Matejovce nad Hornádom	2
+Mátészalka	8
+Miechów	8
+Międzyrzec Podlaski	9
+Minsk	66
+Mir	20
+Miskolc	12
+Modliborzyce	2
+Mogilev	5
+Monastyrok	1
+Monor	1
+Munkács	77
+Nadvirna	5
+Nagyvárad	31
+Navahrudak	20
+Novomyrhorod	1
+Nowy Sącz	15
+Nyíregyháza	13
+Odessa	30
+Oleyëvo-Korolëvka	2
+Opatów	16
+Opoczno	11
+Opole	18
+Opole Lubelskie	14
+Orla	2
+Orsha	2
+Ostroh	4
+Ostrowiec Świętokrzyski	10
+Otwock	9
+Ozarintsy	2
+Ozorków	9
+Pabianice	24
+Papul	1
+Parichi	1
+Pechera	6
+Pinsk	8
+Piotrków Trybunalski	34
+Płaszów	80
+Płock	13
+Plońsk	19
+Praszka	1
+Prienai	2
+Prużana	14
+Pruzhany	14
+Przemyśl	30
+Pułtusk	10
+Radom	88
+Radomyśl Wielki	3
+Radun'	4
+Rava-Rus'ka	10
+Rawa Mazowiecka	13
+Reghin	5
+Ribnița	3
+Riga	246
+Rohatyn	3
+Romanove Selo	1
+Rozhyshche	2
+Rudky	7
+Rudnik nad Sanem	1
+Rzeszów	38
+Saharna	1
+Šahy	1
+Salgótarján	3
+Sarny	9
+Sátoraljaújhely	8
+Senkevychivka	4
+Sernyky	4
+Sharhorod	11
+Shchyrets'	5
+Shepetivka	1
+Shpola	3
+Shumilino	1
+Šiauliai	49
+Siedlce	32
+Siedliszcze	3
+Sieradz	10
+Sighetu Marmației	18
+Skalat	15
+Slobodka	3
+Slonim	16
+Slutsk	6
+Smolensk	10
+Sokołów Podlaski	6
+Sokyrnytsia	2
+Solotvyno	10
+Soroca	3
+Sosnowiec	231
+Stalovichy	2
+Stanislav	12
+Stara Mohylʹnytsia	1
+Starachowice	30
+Starokostiantyniv	6
+Stary Sącz	4
+Stepan'	8
+Stoczek Lukowski	2
+Stolbëisy	1
+Stolin	2
+Sucha	4
+Suchowola	1
+Surazh	4
+Švenčionys	8
+Szarvas	1
+Szczebrzeszyn	2
+Szeged	13
+Szolnok	4
+Tarnogród	2
+Tarnów	55
+Telšiai	2
+Terebovlia	3
+Ternopol	17
+Theresienstadt	1,075
+Thessalonike	83
+Timkovichi	1
+Tlumach	2
+Tolna	1
+Tomaszów Mazowiecki	31
+Torchyn	3
+Trakai	2
+Trebíč	6
+Trnava	7
+Tul'chyn	34
+Tuliszków	1
+Tyvriv	1
+Uzda	1
+Uzhhorod	87
+Vác	3
+Valozhyn	2
+Velizh	5
+Velykyĭ Bereznyĭ	2
+Vilna	334
+Vinnytsia	8
+Vlonia	1
+Volodymyr-Volyns'kyi	6
+Vysokovskiy Rayon	1
+Warka	2
+Warsaw	1,488
+Wisznice	15
+Wrocław	84
+Žagarė	2
+Zamość	18
+Zarichne	1
+Zboriv	1
+Zduńska Wola	10
+Zhmerinka	1
+Zhytomyr	15
+Žiežmariai	1
+Anyksciai	1
+Arad	6
+Ashmiany	3
+Babruisk	8
+Balassagyarmat	4
+Baranavichy	9
+Barysau	2
+Bedzin	223
+Bełzyce	6
+Berdychiv	3
+Berehove	12
+Berestechko	3
+Berezdiv	1
+Berezhany	4
+Berezne	2
+Bershad'	13
+Biała Podlaska	12
+Biała Rawska	29
+Białystok	55
+Biaroza	3
+Bibrka	6
+Bielsko-Biała	8
+Birzai	1
+Bitola	1,143
+Blazhiv	1
+Bobowa	3
+Bochnia	22
+Bolekhiv	7
+Borshchuv	1
+Boryslav	25
+Boskovice	2
+Bransk	3
+Bratslav	4
+Brody	16
+Brzesko	2
+Buczacz	6
+Budapest	474
+Bus'k	1
+Bychawa	1
+Chashniki	1
+Chrzanow	18
+Ciechanow	17
+Cieszanow	3
+Cristuru Secuiesc	1
+Czernowitz	62
+Czestochowa	117
+Czortkow	9
+Dabrowa Gornicza	171
+Dabrowa Tarnowska	2
+Damashevichy	1
+Daugavpils	14
+Dokshytsy	7
+Dombovar	2
+Dombrowa	195
+Drohobycz	4
+Drzewica	1
+Dubrovytsia	4
+Dzialoszyce	5
+Dziarechyn	3
+Dziatlava	18
+Glebokie	2
+Gol'shany	1
+Gora Kalwaria	4
+Gorodnaia	1
+Gostynin	3
+Gyongyos	1
+Hajduszoboszlo	1
+Halushchyntsi	1
+Halych	1
+Hantsavichy	2
+Haradnaia	2
+Hatvan	3
+Hlusk	1
+Hlyniany	1
+Homel'	3
+Horodenka	5
+Horokhiv	5
+Hradzianka	2
+Hrodna	21
+Hvizdets'	1
+Iaktoriv	4
+Izbica Lubelska	10
+Jozefow	2
+Kalisz	21
+Kałuszyn	5
+Kam'iane Pole	1
+Kamin'-Kashyrs'kyi	2
+Katowice	33
+Kecskemet	2
+Kelme	1
+Kharkiv	13
+Khmel'nyts'ka oblast'	4
+Khmel'nyts'kyi	6
+Khust	13
+Kielce	171
+Kisvarda	7
+Kletsk	4
+Kobryn	2
+Kolbuszowa	79
+Kolozsvar	19
+Komarow-Osada	1
+Kopychyntsi	2
+Korets'	3
+Kosice	25
+Koszeg	129
+Kovel'	7
+Kozienice	63
+Krakow	373
+Krasnik	3
+Kretinga	1
+Krosniewice	2
+Krymne	2
+Kryzhopil'	1
+Kul'chyny	1
+Kunhegyes	1
+Kutno	18
+Kysylyn	3
+Ladyzhyn	2
+Lakhva	13
+Lask	5
+Leczyca	5
+Lesko	3
+Lida	8
+Liepaja	12
+Lipinki	1
+Lithakia	1
+Litin	2
+Litzmannstadt	1,563
+Liubavichi	4
+Łomza	8
+Lubaczow	4
+Lubartow	3
+Lublin	118
+Łuck	6
+Lwow	181
+Lyubcha	1
+Mahiliou	7
+Makow Mazowiecki	4
+Marcinkonys	1
+Matejovce nad Hornadom	2
+Mateszalka	8
+Miechow	8
+Miedzyrzec Podlaski	9
+Minsk	66
+Mir	20
+Miskolc	12
+Modliborzyce	2
+Mogilev	5
+Monastyrok	1
+Monor	1
+Munkacs	77
+Nadvirna	5
+Nagyvarad	31
+Navahrudak	20
+Novomyrhorod	1
+Nowy Sacz	15
+Nyiregyhaza	13
+Odessa	30
+Oleyevo-Korolevka	2
+Opatow	16
+Opoczno	11
+Opole	18
+Opole Lubelskie	14
+Orla	2
+Orsha	2
+Ostroh	4
+Ostrowiec Swietokrzyski	10
+Otwock	9
+Ozarintsy	2
+Ozorkow	9
+Pabianice	24
+Papul	1
+Parichi	1
+Pechera	6
+Pinsk	8
+Piotrkow Trybunalski	34
+Płaszow	80
+Płock	13
+Plonsk	19
+Praszka	1
+Prienai	2
+Pruzana	14
+Pruzhany	14
+Przemysl	30
+Pułtusk	10
+Radom	88
+Radomysl Wielki	3
+Radun'	4
+Rava-Rus'ka	10
+Rawa Mazowiecka	13
+Reghin	5
+Ribnita	3
+Riga	246
+Rohatyn	3
+Romanove Selo	1
+Rozhyshche	2
+Rudky	7
+Rudnik nad Sanem	1
+Rzeszow	38
+Saharna	1
+Sahy	1
+Salgotarjan	3
+Sarny	9
+Satoraljaujhely	8
+Senkevychivka	4
+Sernyky	4
+Sharhorod	11
+Shchyrets'	5
+Shepetivka	1
+Shpola	3
+Shumilino	1
+Siauliai	49
+Siedlce	32
+Siedliszcze	3
+Sieradz	10
+Sighetu Marmatiei	18
+Skalat	15
+Slobodka	3
+Slonim	16
+Slutsk	6
+Smolensk	10
+Sokołow Podlaski	6
+Sokyrnytsia	2
+Solotvyno	10
+Soroca	3
+Sosnowiec	231
+Stalovichy	2
+Stanislav	12
+Stara Mohylʹnytsia	1
+Starachowice	30
+Starokostiantyniv	6
+Stary Sacz	4
+Stepan'	8
+Stoczek Lukowski	2
+Stolbeisy	1
+Stolin	2
+Sucha	4
+Suchowola	1
+Surazh	4
+Svencionys	8
+Szarvas	1
+Szczebrzeszyn	2
+Szeged	13
+Szolnok	4
+Tarnogrod	2
+Tarnow	55
+Telsiai	2
+Terebovlia	3
+Ternopol	17
+Theresienstadt	1,075
+Thessalonike	83
+Timkovichi	1
+Tlumach	2
+Tolna	1
+Tomaszow Mazowiecki	31
+Torchyn	3
+Trakai	2
+Trebic	6
+Trnava	7
+Tul'chyn	34
+Tuliszkow	1
+Tyvriv	1
+Uzda	1
+Uzhhorod	87
+Vac	3
+Valozhyn	2
+Velizh	5
+Velykyi Bereznyi	2
+Vilna	334
+Vinnytsia	8
+Vlonia	1
+Volodymyr-Volyns'kyi	6
+Vysokovskiy Rayon	1
+Warka	2
+Warsaw	1,488
+Wisznice	15
+Wrocław	84
+Zagare	2
+Zamosc	18
+Zarichne	1
+Zboriv	1
+Zdunska Wola	10
+Zhmerinka	1
+Zhytomyr	15
+Ziezmariai	1
