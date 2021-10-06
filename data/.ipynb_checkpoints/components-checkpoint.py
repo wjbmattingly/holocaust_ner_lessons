@@ -63,6 +63,28 @@ def find_ghettos(doc):
     filtered = filter_spans(original_ents)
     doc.ents = filtered
     return (doc)
+second_ghettos_pattern = r"[A-Z]\w+((-| )*[A-Z]\w+)* (g|G)hetto"
+@Language.component("find_ghettos2")
+def find_ghettos2(doc):
+    fps = ["That", "The"]
+    text = doc.text
+    camp_ents = []
+    original_ents = list(doc.ents)
+    for match in re.finditer(second_ghettos_pattern, doc.text):
+        start, end = match.span()
+        span = doc.char_span(start, end-7)
+        if span is not None and span.text not in fps:
+            if "The " in span.text:
+                camp_ents.append((span.start+1, span.end, span.text))
+            else:
+                camp_ents.append((span.start, span.end, span.text))
+    for ent in camp_ents:
+        start, end, name = ent
+        per_ent = Span(doc, start, end, label="GHETTO")
+        original_ents.append(per_ent)
+    filtered = filter_spans(original_ents)
+    doc.ents = filtered
+    return (doc)
 
 ###PERSON###
 people_pattern = r"((((Mr|Mrs|Miss|Dr|Col|Adm|Lt|Cap|Cpt|Fr|Cl|Cln|Sgt)\.)|(President|Rabbi|Queen|Prince|Princess|Pope|Father|Bishop|King|Cardinal|General|Liutenant|Colonel|Lieutenant Colonel|Private|Admiral|Captain|Sergeant|Sergeant First Class|Staff Sergeant|Sergeant Major|Corp Sergeant Major|Field Sergeant|Technical Sergeant|Corporal|Lance Corporal|Ensign|2nd Lieutenant|1st Lieutenant|Major|Hauptmann|Staff Captain|Oberst|Oberstlieutenant)) (?:[A-Z]\w+[ -]?)+)(the [A-Z]\w*|I\w*|X\w*|v\w*)*"
@@ -283,6 +305,49 @@ def find_camps_strict(doc):
     doc.ents = filtered
     return (doc)
 
+camps_pattern = r"(Alderney|Amersfoort|Auschwitz|Banjica|Belzec|Bergen-Belsen|Bernburg|Bogdanovka|Bolzano|Bor|Breendonk|Breitenau|Buchenwald|Chelmno|Dachau|Drancy|Falstad|Flossenburg|Fort VII|Fossoli|Grini|Gross-Rosen|Herzogenbusch|Hinzert|Janowska|Jasenovac|Kaiserwald|Kaunas|Kemna|Klooga|Le Vernet|Majdanek|Malchow|Maly Trostenets|Mechelen|Mittelbau-Dora|Natzweiler-Struthof|Neuengamme|Niederhagen|Oberer Kuhberg|Oranienburg|Osthofen|Plaszow|Ravensbruck|Risiera di San Sabba|Sachsenhausen|Sajmište|Salaspils|Sobibor|Soldau|Stutthof|Theresienstadt|Trawniki|Treblinka|Vaivara)(-[A-Z]\S+)*"
+@Language.component("find_camps")
+def find_camps(doc):
+    text = doc.text
+    camp_ents = []
+    original_ents = list(doc.ents)
+    for match in re.finditer(camps_pattern, doc.text):
+        start, end = match.span()
+        span = doc.char_span(start, end)
+        if span is not None:
+            camp_ents.append((span.start, span.end, span.text))
+    for ent in camp_ents:
+        start, end, name = ent
+        per_ent = Span(doc, start, end, label="CAMP")
+        per_ent.set_extension("subcamp", getter=subcamp_getter, force=True)
+        per_ent.set_extension("date_open", getter=date_open_getter, force=True)
+        per_ent.set_extension("date_closed", getter=date_closed_getter, force=True)
+        per_ent.set_extension("latlong", getter=latlong_getter, force=True)
+        per_ent.set_extension("hgc_id", getter=hgc_id_getter, force=True)
+        original_ents.append(per_ent)
+    filtered = filter_spans(original_ents)
+    doc.ents = filtered
+    return (doc)
+
+second_camps_pattern = r"[A-Z]\w+((-| )*[A-Z]\w+)* (c|C)oncentration (c|C)amp"
+@Language.component("find_camps2")
+def find_camps2(doc):
+    text = doc.text
+    camp_ents = []
+    original_ents = list(doc.ents)
+    for match in re.finditer(second_camps_pattern, doc.text):
+        start, end = match.span()
+        span = doc.char_span(start, end-19)
+        if span is not None:
+            camp_ents.append((span.start, span.end, span.text))
+    for ent in camp_ents:
+        start, end, name = ent
+        per_ent = Span(doc, start, end, label="CAMP")
+        original_ents.append(per_ent)
+    filtered = filter_spans(original_ents)
+    doc.ents = filtered
+    return (doc)
+
 ###REVOLTUIONARY GROUPS###
 groups_pattern = r"(Ethnikon Apeleutherotikon Metopon|Weisse Rose|Rote Kapelle|Affiche rouge|Edelweisspiraten|White Rose|Bielski|Nekamah|Voroshilov|OEuvre de secours aux enfants|Union des juifs pour la résistance et l'entraide|Zorin Unit|Komsomolski|Fareynikte|Korzh|Zhukov|Budenny|Parkhomenko|Sixième)((-)*[A-Z]\S+)*( (Brigade|brothers|group))*"
 @Language.component("find_groups")
@@ -337,7 +402,7 @@ def find_places(doc):
                 new_ents.append((span.start, span.end-1, span.text))
     for ent in new_ents:
         start, end, name = ent
-        per_ent = Span(doc, start, end, label="COUNTRY")
+        per_ent = Span(doc, start, end, label="GPE")
         original_ents.append(per_ent)
     filtered = filter_spans(original_ents)
     doc.ents = filtered
@@ -379,6 +444,26 @@ def find_geography(doc):
             per_ent = Span(doc, start, end, label="SEA-OCEAN")
         elif "Forest" in name:
             per_ent = Span(doc, start, end, label="FOREST")
+        original_ents.append(per_ent)
+    filtered = filter_spans(original_ents)
+    doc.ents = filtered
+    return (doc)
+
+##Streets
+streets_pattern = r"([A-Z][a-z]*(strasse|straße|straat)\b|([A-Z][a-z]* (Street|St|Boulevard|Blvd|Avenue|Ave|Road|Rd|Lane|Ln|Place|Pl)(\.)*))"
+@Language.component("find_streets")
+def find_streets(doc):
+    text = doc.text
+    camp_ents = []
+    original_ents = list(doc.ents)
+    for match in re.finditer(streets_pattern, doc.text):
+        start, end = match.span()
+        span = doc.char_span(start, end)
+        if span is not None:
+            camp_ents.append((span.start, span.end, span.text))
+    for ent in camp_ents:
+        start, end, name = ent
+        per_ent = Span(doc, start, end, label="STREET")
         original_ents.append(per_ent)
     filtered = filter_spans(original_ents)
     doc.ents = filtered
